@@ -6,6 +6,7 @@
 - 💞️ I’m looking to collaborate on my personal project since I could use all the help!
 - 📫 How to reach me by email: liam@sawyerliam.com
 
+![bitmoji-wave](/Users/liamsawyer/Desktop/GitHub/LiamSx45/bitmoji wave.jpg)
 ___
 
 ## Let's Get Social!
