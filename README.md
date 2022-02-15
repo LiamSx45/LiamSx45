@@ -1,13 +1,22 @@
 # Hello! 👋
-____
-
-[![Linkedin Badge](https://img.shields.io/badge/-linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/sawyerliam/)](https://www.linkedin.com/in/sawyerliam/)
 
 - 👋 Hi, I’m @LiamSx45
 - 👀 I’m interested in making my own applications.
 - 🌱 I’m currently learning swift and swiftui on xcode.
 - 💞️ I’m looking to collaborate on my personal project since I could use all the help!
 - 📫 How to reach me by email: liam@sawyerliam.com
+
+___
+
+## Let's Get Social!
+Check out my social links below and let's connect.
+
+[![Linkedin Badge](https://img.shields.io/badge/-Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/sawyerliam/)](https://www.linkedin.com/in/sawyerliam/)
+[![Snapchat Badge](https://img.shields.io/badge/-Snapchat-yellow?style=flat-square&logo=snapchat&logoColor=white&link=https://www.snapchat.com/add/sawyer.liam?sender_web_id=6af4f2fc-be55-4936-8d30-9bcc7ca9a932&device_type=desktop&is_copy_url=true)](https://www.snapchat.com/add/sawyer.liam?sender_web_id=6af4f2fc-be55-4936-8d30-9bcc7ca9a932&device_type=desktop&is_copy_url=true)
+[![Instagram Badge](https://img.shields.io/badge/-Instagram-c27ba0?style=flat-square&logo=Instagram&logoColor=white&link=http://instagram.com/sawyer.liam/)](http://instagram.com/sawyer.liam/)
+[![Spark AR Badge](https://img.shields.io/badge/-Spark_AR-60d1cc?style=flat-square&logo=sparkar&logoColor=white&link=https://www.facebook.com/sparkarhub/portfolios/ig/sawyer.original/)](https://www.facebook.com/sparkarhub/portfolios/ig/sawyer.original/)
+
+___
 
 # My Website
 
@@ -26,7 +35,9 @@ ____
     </td>
     <td>
       <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
+      <img alt="Kali" src="https://img.shields.io/badge/Kali Linux-1383e7?style=for-the-badge&logo=kalilinux&logoColor=white" />
       <img alt="MacOS" src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white" />
+      <img alt="iOS" src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" />
       <img alt="Windows 10" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" />
       <img alt="Android" src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
       <img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
@@ -120,6 +131,7 @@ ____
       <img alt="Squarespace" src="https://img.shields.io/badge/squarespace-444444?style=for-the-badge&logo=squarespace&logoColor=white"/>
       <img alt="Microsoft Office" src="https://img.shields.io/badge/Microsoft Office-de420a?style=for-the-badge&logo=MicrosoftOffice&logoColor=white"/>
       <img alt="Google Cloud" src="https://img.shields.io/badge/Google Cloud-3d85c6?style=for-the-badge&logo=googlecloud&logoColor=white"/>
+      <img alt="Stripe" src="https://img.shields.io/badge/Stripe-674ea7?style=for-the-badge&logo=stripe&logoColor=white"/>
     </td>
   </tr>
   <tr>
