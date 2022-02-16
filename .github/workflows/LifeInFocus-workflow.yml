@@ -15,4 +15,5 @@ jobs:
         uses: gautamkrishnar/blog-post-workflow@master
         with:
           comment_tag_name: "LIFEINFOCUS"
+          template: description
           feed_list: "https://clownfish-dolphin-zpyt.squarespace.com/life-in-focus?format=rss"
