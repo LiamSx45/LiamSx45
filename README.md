@@ -41,6 +41,8 @@ ___
 
 ____
 
+📊 &nbsp;**This week I spent my time on**
+
 <!--START_SECTION:waka-->
 ```text
 Total: 8 mins
