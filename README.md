@@ -1,6 +1,6 @@
 # Hello!   <a href="https://www.sawyerliam.com/"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></a>
 
-<img align="right" src="https://github.com/LiamSx45/LiamSx45/blob/main/bitmoji%20wave.png?raw=true">
+<img align="right" width="400px" src="https://github.com/LiamSx45/LiamSx45/blob/main/bitmoji%20wave.png?raw=true">
 
 
 - 👋 Hi, I’m @LiamSx45
