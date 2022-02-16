@@ -11,6 +11,20 @@
 
 ___
 
+📊 &nbsp;**This week I spent my time on**
+
+<!--START_SECTION:waka-->
+```text
+Total: 8 mins
+
+Other      3 hrs 28 mins   ████████████████████████░   96.20 % 
+Java       5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.52 % 
+Markdown   2 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.28 % 
+```
+<!--END_SECTION:waka-->
+
+---
+
 ## 🔗 Let's Get Social!
 Check out my social links below and let's connect.
 
@@ -40,18 +54,6 @@ ___
 <a href="https://sawyerliam.com/" target="_blank" rel="noreferrer"><img alt="website" style="max-width: 50px;" src="https://images.squarespace-cdn.com/content/v1/60620ad123f283009a5aeec4/93c9ae6a-3f1b-4686-82f2-b34e49219040/Copy+of+Sawyer+Studios+Logo.jpg?format=1500w" /></a>
 
 ____
-
-📊 &nbsp;**This week I spent my time on**
-
-<!--START_SECTION:waka-->
-```text
-Total: 8 mins
-
-Other      3 hrs 28 mins   ████████████████████████░   96.20 % 
-Java       5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.52 % 
-Markdown   2 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.28 % 
-```
-<!--END_SECTION:waka-->
 
 # My Skills 🌱
 
