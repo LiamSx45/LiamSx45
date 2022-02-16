@@ -21,7 +21,7 @@ Check out my social links below and let's connect.
 
 ___
 
-# Latest *Sawyer Talks* Blog Posts
+# ✨ Latest *Sawyer Talks* Blog Posts
 <!-- SAWYER_TALKS:START -->
 - [The Good and the Bad | How I Overcome My Summer Boredom.](https://www.sawyerliam.com/sawyertalks/summer2021)
 - [Special Edition | PRIDE &#39;21: A Q&amp;A With Friends](https://www.sawyerliam.com/sawyertalks/pride-2021)
@@ -29,7 +29,7 @@ ___
 - [Let’s Sip: Tea Time on a Monday Night? A Review of White Claw Iced Teas.](https://www.sawyerliam.com/sawyertalks/lets-sip01)
 <!-- SAWYER_TALKS:END -->
 
-# Latest *Life in Focus* Blog Posts
+# 📝 Latest *Life in Focus* Blog Posts
 <!-- LIFEINFOCUS:START -->
 - [Episode 01: The Stigma of Mental Health with Colette Barron](https://www.sawyerliam.com/life-in-focus/ep01)
 - [Trailer](https://www.sawyerliam.com/life-in-focus/trailer)
