@@ -16,4 +16,3 @@ jobs:
         with:
           comment_tag_name: "LIFEINFOCUS"
           feed_list: "https://clownfish-dolphin-zpyt.squarespace.com/life-in-focus?format=rss"
-          template: $description
