@@ -14,4 +14,5 @@ jobs:
       - name: Pull in dev.to posts
         uses: gautamkrishnar/blog-post-workflow@master
         with:
+          comment_tag_name: "SAWYER_TALKS"
           feed_list: "https://clownfish-dolphin-zpyt.squarespace.com/sawyertalks?format=rss"

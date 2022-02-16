@@ -21,13 +21,17 @@ Check out my social links below and let's connect.
 
 ___
 
-# Blog posts
-<!-- BLOG-POST-LIST:START -->
+# Latest *Sawyer Talks* Blog Posts
+<!-- SAWYER_TALKS:START -->
 - [The Good and the Bad | How I Overcome My Summer Boredom.](https://www.sawyerliam.com/sawyertalks/summer2021)
 - [Special Edition | PRIDE &#39;21: A Q&amp;A With Friends](https://www.sawyerliam.com/sawyertalks/pride-2021)
 - [Vinyl Collection](https://www.sawyerliam.com/sawyertalks/vinyl-collection)
 - [Let’s Sip: Tea Time on a Monday Night? A Review of White Claw Iced Teas.](https://www.sawyerliam.com/sawyertalks/lets-sip01)
-<!-- BLOG-POST-LIST:END -->
+<!-- SAWYER_TALKS:END -->
+
+# Latest *Life in Focus* Blog Posts
+<!-- LIFEINFOCUS:START -->
+<!-- LIFEINFOCUS:END -->
 
 # My Website
 
