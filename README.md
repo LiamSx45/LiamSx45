@@ -30,7 +30,7 @@ ___
 <!-- SAWYER_TALKS:END -->
 
 # 📝 Latest *Life in Focus* Blog Posts
-<!-- LIFEINFOCUS:START -->descriptiondescription<!-- LIFEINFOCUS:END -->
+<!-- LIFEINFOCUS:START -->&lt;p class=&quot;&quot; style=&quot;white-space:pre-wrap;&quot;&gt;Come join us as we talk about why there is such a stigma and how we can help not only ourselves but for others that are struggling because if one thing is certain, we are not alone and our shared experiences only build us up and make us better.&lt;/p&gt;&lt;p class=&quot;&quot; style=&quot;white-space:pre-wrap;&quot;&gt;For the full transcript of this episode, click &lt;a href=&quot;/life-in-focus/EP02&quot;&gt;h&lt;/a&gt;&lt;a href=&quot;/life-in-focus/ep01&quot;&gt;e&lt;/a&gt;&lt;a href=&quot;/life-in-focus/EP02&quot;&gt;re&lt;/a&gt;&lt;/p&gt;&lt;p class=&quot;&quot; style=&quot;white-space:pre-wrap;&quot;&gt;Life in Focus brings you weekly conversations that can be listened anywhere. Nothing is off-limits here and it’s just a chill time to sip on something and talk. &lt;/p&gt;&lt;p class=&quot;&quot; style=&quot;white-space:pre-wrap;&quot;&gt;• Free Episodes&lt;/p&gt;&lt;p class=&quot;&quot; style=&quot;white-space:pre-wrap;&quot;&gt;• Subscriber Early Access and Exclusive Content&lt;/p&gt;&lt;p class=&quot;&quot; data-rte-preserve-empty=&quot;true&quot; style=&quot;white-space:pre-wrap;&quot;&gt;&lt;/p&gt;&lt;p class=&quot;&quot; style=&quot;white-space:pre-wrap;&quot;&gt;For the full transcript of this trailer, click &lt;a href=&quot;/life-in-focus/Trailer&quot; target=&quot;&quot;&gt;he&lt;/a&gt;&lt;a href=&quot;https://www.sawyerliam.com/life-in-focus/trailer&quot; target=&quot;&quot;&gt;re&lt;/a&gt;&lt;/p&gt;<!-- LIFEINFOCUS:END -->
 
 # My Website
 
