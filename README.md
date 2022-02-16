@@ -30,10 +30,7 @@ ___
 <!-- SAWYER_TALKS:END -->
 
 # 📝 Latest *Life in Focus* Blog Posts
-<!-- LIFEINFOCUS:START -->
-- [Episode 01: The Stigma of Mental Health with Colette Barron](https://www.sawyerliam.com/life-in-focus/ep01)
-- [Trailer](https://www.sawyerliam.com/life-in-focus/trailer)
-<!-- LIFEINFOCUS:END -->
+<!-- LIFEINFOCUS:START -->descriptiondescription<!-- LIFEINFOCUS:END -->
 
 # My Website
 
