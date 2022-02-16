@@ -11,7 +11,7 @@
 
 ___
 
-## Let's Get Social!
+## 🔗 Let's Get Social!
 Check out my social links below and let's connect.
 
 [![Linkedin Badge](https://img.shields.io/badge/-Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/sawyerliam/)](https://www.linkedin.com/in/sawyerliam/)
@@ -35,7 +35,7 @@ ___
 - [Trailer](https://www.sawyerliam.com/life-in-focus/trailer)
 <!-- LIFEINFOCUS:END -->
 
-# My Website
+# 💻 My Website
 
 <a href="https://sawyerliam.com/" target="_blank" rel="noreferrer"><img alt="website" style="max-width: 50px;" src="https://images.squarespace-cdn.com/content/v1/60620ad123f283009a5aeec4/93c9ae6a-3f1b-4686-82f2-b34e49219040/Copy+of+Sawyer+Studios+Logo.jpg?format=1500w" /></a>
 
@@ -48,7 +48,7 @@ ____
   <th>Tools, Frameworks, Programming Languages</th>
   <tr>
     <td>
-      <p>Operanting System</p>
+      <p>⚡️ Operanting System</p>
     </td>
     <td>
       <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white" />
@@ -62,7 +62,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Design</p>
+      <p>🖌 Design</p>
     </td>
     <td>
       <img alt="Figma" src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white"/>
@@ -75,7 +75,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Frontend</p>
+      <p>🔏 Frontend</p>
     </td>
     <td>
       <img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -86,7 +86,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Backend</p>
+      <p>🔐 Backend</p>
     </td>
     <td>
       <img alt="Flutter" src="https://img.shields.io/badge/Flutter-%2300C4CC.svg?style=for-the-badge&logo=flutter&logoColor=white"/>
@@ -104,7 +104,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Databases and servers</p>
+      <p>💿 Databases and servers</p>
     </td>
     <td>
       <img alt="firebase" src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black"/>
@@ -115,7 +115,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Version control</p>
+      <p>💾 Version control</p>
     </td>
     <td>
       <img alt="Git" src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"/>
@@ -126,7 +126,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>IDEs and text editors</p>
+      <p>📝 IDEs and text editors</p>
     </td>
     <td>
        <img alt="Android Studio" src="https://img.shields.io/badge/Android Studio-5da762?style=for-the-badge&logo=androidstudio&logoColor=white"/>
@@ -138,7 +138,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Tools/Other</p>
+      <p>🛠 Tools/Other</p>
     </td>
     <td>
       <img alt="raspberrypi" src="https://img.shields.io/badge/Raspberry Pi-a61260?style=for-the-badge&logo=raspberrypi&logoColor=white"/>
@@ -153,7 +153,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Virtualization</p>
+      <p>🖥 Virtualization</p>
     </td>
     <td>
       <img alt="Virtual Box" src="https://img.shields.io/badge/virtualbox-0b5394.svg?style=for-the-badge&logo=virtualbox&logoColor=white"/>
@@ -162,7 +162,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Social Media</p>
+      <p>🤳🏼 Social Media</p>
     </td>
     <td>
       <img alt="Instagram" src="https://img.shields.io/badge/Instagram-c27ba0.svg?style=for-the-badge&logo=instagram&logoColor=white"/>
@@ -174,7 +174,7 @@ ____
   </tr>
   <tr>
     <td>
-      <p>Currently learning</p>
+      <p>💡 Currently learning</p>
     </td>
     <td>
       <img alt="AWS" src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white"/>
