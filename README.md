@@ -53,7 +53,8 @@ ___
 
 # 💻 My Website
 
-<a href="https://sawyerliam.com/" target="_blank" rel="noreferrer"><img alt="website" style="max-width: 50px;" src="https://images.squarespace-cdn.com/content/v1/60620ad123f283009a5aeec4/93c9ae6a-3f1b-4686-82f2-b34e49219040/Copy+of+Sawyer+Studios+Logo.jpg?format=1500w" /></a>
+![Sawyer Original Logo Dark Mode](https://github.com/LiamSx45/LiamSx45/blob/main/Sawyer%20Studios%20Logo%20dark.png?raw=true#gh-dark-mode-only)
+![Sawyer Original Logo Light Mode](https://github.com/LiamSx45/LiamSx45/blob/main/Sawyer%20Studios%20Logo%20Light.png?raw=true#gh-light-mode-only)
 
 ____
 
