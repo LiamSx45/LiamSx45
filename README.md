@@ -119,6 +119,7 @@ ____
       <img alt="C" src="https://img.shields.io/badge/C-3d85c6.svg?style=for-the-badge&logo=csharp&logoColor=white"/>
       <img alt="assembly" src="https://img.shields.io/badge/assembly-7f6000.svg?style=for-the-badge&logo=assemblyscript&logoColor=white"/>
       <img alt="Powershell" src="https://img.shields.io/badge/powershell-0c4b83.svg?style=for-the-badge&logo=powershell&logoColor=white"/>
+      <img alt="perl" src="https://img.shields.io/badge/perl-1d4f73.svg?style=for-the-badge&logo=perl&logoColor=white"/>
     </td>
   </tr>
   <tr>
