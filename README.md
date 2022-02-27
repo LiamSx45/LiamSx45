@@ -15,12 +15,12 @@ ___
 
 <!--START_SECTION:waka-->
 ```text
-From: 17 February, 2022 - To: 24 February, 2022
+From: 18 February, 2022 - To: 25 February, 2022
 
-Other      15 hrs 7 mins   ███████████████████████▓░   95.13 % 
-Java       31 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.30 % 
-Python     12 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.28 % 
-VBScript   2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.29 % 
+Other      11 hrs 36 mins  ███████████████████████▒░   93.74 % 
+Java       31 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.24 % 
+Python     12 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.64 % 
+VBScript   2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.37 % 
 ```
 <!--END_SECTION:waka-->
 
