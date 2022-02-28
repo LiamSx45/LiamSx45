@@ -16,9 +16,9 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 20 February 2022 - To: 27 February 2022
+From: 21 February 2022 - To: 28 February 2022
 
-Other      10 hrs 49 mins  ███████████████████████▒░   93.32 %
+Other      10 hrs 47 mins  █████████████████████░░░░   84.58 %
 ```
 
 <!--END_SECTION:waka-->
