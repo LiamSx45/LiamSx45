@@ -16,9 +16,14 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 23 February 2022 - To: 02 March 2022
+From: 24 February 2022 - To: 03 March 2022
 
-Other   1 hr 51 mins    ██████████████▒░░░░░░░░░░   57.08 %
+Java             1 hr 24 mins    ███████████████░░░░░░░░░░   59.89 %
+Text             22 mins         ████░░░░░░░░░░░░░░░░░░░░░   15.72 %
+Groovy           12 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   08.81 %
+YAML             7 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.42 %
+GitIgnore file   5 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.77 %
+Markdown         4 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.85 %
 ```
 
 <!--END_SECTION:waka-->
