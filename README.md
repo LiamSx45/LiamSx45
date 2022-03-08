@@ -16,14 +16,14 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 27 February 2022 - To: 06 March 2022
+From: 28 February 2022 - To: 07 March 2022
 
-Java             1 hr 24 mins    ███████████████░░░░░░░░░░   59.89 %
-Text             22 mins         ████░░░░░░░░░░░░░░░░░░░░░   15.72 %
-Groovy           12 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   08.81 %
-YAML             7 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.42 %
-GitIgnore file   5 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.77 %
-Markdown         4 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.85 %
+Text             22 mins         █████████▓░░░░░░░░░░░░░░░   38.90 %
+Groovy           12 mins         █████▒░░░░░░░░░░░░░░░░░░░   21.79 %
+YAML             7 mins          ███▒░░░░░░░░░░░░░░░░░░░░░   13.42 %
+GitIgnore file   5 mins          ██▒░░░░░░░░░░░░░░░░░░░░░░   09.32 %
+Markdown         4 mins          █▓░░░░░░░░░░░░░░░░░░░░░░░   07.06 %
+Properties       2 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.22 %
 ```
 
 <!--END_SECTION:waka-->
