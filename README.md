@@ -64,7 +64,7 @@ ____
 
 # My Badges 🏅
 
-<img src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/Badges/google-it-support-certificate.png" href="https://www.credly.com/badges/019b830d-0446-4d35-8ebd-8932eab213e4/public_url"> <img src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/Badges/cyber-threat-intelligence.png" href="https://www.credly.com/badges/2142a988-5e7d-4973-bcf9-64439ddf6df2/public_url">
+<a href="https://www.credly.com/badges/019b830d-0446-4d35-8ebd-8932eab213e4/public_url" > <img src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/Badges/google-it-support-certificate.png"> </a> <a href="https://www.credly.com/badges/2142a988-5e7d-4973-bcf9-64439ddf6df2/public_url"><img src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/Badges/cyber-threat-intelligence.png"> </a>
 
 
 ____
