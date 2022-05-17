@@ -16,7 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 08 May 2022 - To: 15 May 2022
+From: 09 May 2022 - To: 16 May 2022
 
 Python       33 mins         █████████████░░░░░░░░░░░░   52.15 %
 HTML         19 mins         ███████▓░░░░░░░░░░░░░░░░░   30.75 %
