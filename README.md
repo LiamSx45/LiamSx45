@@ -16,10 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 11 May 2022 - To: 18 May 2022
-
-Python   33 mins         █████████████████░░░░░░░░   67.62 %
-HTML     15 mins         ████████░░░░░░░░░░░░░░░░░   32.38 %
+No activity tracked
 ```
 
 <!--END_SECTION:waka-->
