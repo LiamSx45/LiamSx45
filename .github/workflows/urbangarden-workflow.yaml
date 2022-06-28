@@ -1,4 +1,4 @@
-name: Latest Life in Focus Blog Posts
+name: Latest Urban Garden Dreams Podcast Episodes
 on:
   schedule: # Run workflow automatically
     - cron: '0 * * * *' # Runs every hour, on the hour
@@ -14,5 +14,5 @@ jobs:
       - name: Pull in dev.to posts
         uses: gautamkrishnar/blog-post-workflow@master
         with:
-          comment_tag_name: "URBANGARDENDREAMS"
+          comment_tag_name: "URBANGARDEN"
           feed_list: "https://feeds.captivate.fm/urban-garden-dreams/?format=rss"
