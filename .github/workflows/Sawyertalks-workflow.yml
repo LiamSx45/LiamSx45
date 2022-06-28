@@ -15,4 +15,4 @@ jobs:
         uses: gautamkrishnar/blog-post-workflow@master
         with:
           comment_tag_name: "SAWYER_TALKS"
-          feed_list: "https://clownfish-dolphin-zpyt.squarespace.com/sawyertalks?format=rss"
+          feed_list: "https://feeds.captivate.fm/sawyer-talks/?format=rss"
