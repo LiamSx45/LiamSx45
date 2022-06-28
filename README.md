@@ -48,6 +48,8 @@ ___
 
 # 📝 Latest *Life in Focus* Podcast Episodes
 <!-- LIFEINFOCUS:START -->
+- [Episode 01: The Stigma of Mental Health with Colette Barron](https://life-in-focus.captivate.fm/episode/episode-01-the-stigma-of-mental-health-with-colette-barron)
+- [Trailer](https://life-in-focus.captivate.fm/episode/trailer)
 <!-- LIFEINFOCUS:END -->
 
 # 🪴 Latest *Urban Garden Dreams* Podcast Episodes
