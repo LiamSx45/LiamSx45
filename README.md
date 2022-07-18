@@ -54,7 +54,7 @@ ___
 
 # 🪴 Latest *Urban Garden Dreams* Podcast Episodes
 <!-- URBANGARDEN:START -->
-- [Trailer](https://urbangardendreams.com/episodes/trailer-full)
+- [Trailer](https://urbangardendreams.com/episode/trailer)
 <!-- URBANGARDEN:END -->
 
 # 💻 My Website
