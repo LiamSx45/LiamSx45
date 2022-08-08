@@ -16,7 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 30 July 2022 - To: 06 August 2022
+From: 31 July 2022 - To: 07 August 2022
 
 HTML     1 hr 38 mins    ██████████████▓░░░░░░░░░░   58.65 %
 SCSS     54 mins         ████████░░░░░░░░░░░░░░░░░   32.48 %
