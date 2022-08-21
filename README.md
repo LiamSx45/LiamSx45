@@ -148,7 +148,7 @@ ____
       <img alt="firebase" src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black"/>
       <img alt="webmin" src="https://img.shields.io/badge/webmin-0b5394?style=for-the-badge&logo=webmin&logoColor=white"/>
       <img alt="googleanalytics" src="https://img.shields.io/badge/google analytics-ec7b11?style=for-the-badge&logo=googleanalytics&logoColor=white"/>
-       <img alt="homebridge" src="https://img.shields.io/badge/homebridge-881978?style=for-the-badge&logo=homebridge&logoColor=white"/>
+      <img alt="homebridge" src="https://img.shields.io/badge/homebridge-881978?style=for-the-badge&logo=homebridge&logoColor=white"/>
     </td>
   </tr>
   <tr>
@@ -196,6 +196,7 @@ ____
     <td>
       <img alt="Virtual Box" src="https://img.shields.io/badge/virtualbox-0b5394.svg?style=for-the-badge&logo=virtualbox&logoColor=white"/>
       <img alt="VMware" src="https://img.shields.io/badge/vmware-bcbcbc.svg?style=for-the-badge&logo=vmware&logoColor=black"/>
+      <img alt="Proxmox" src="https://img.shields.io/badge/proxmox-ec7b11?style=for-the-badge&logo=proxmox&logoColor=white"/>
     </td>
   </tr>
   <tr>
