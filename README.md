@@ -63,7 +63,7 @@ ___
 
 # 💻 My Website
 
-### [Come take a look! 👀 ](https://www.sawyeroriginal.com/)
+### [Come take a look! 👀 ](https://sawyeroriginal.com/)
 
 
 ![Sawyer Original Logo Dark Mode](https://github.com/LiamSx45/LiamSx45/blob/main/Sawyer%20Studios%20Logo%20dark.png?raw=true#gh-dark-mode-only)
