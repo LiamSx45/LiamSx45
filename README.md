@@ -16,10 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 29 August 2022 - To: 05 September 2022
-
-HTML        18 mins         █████████████████▓░░░░░░░   70.74 %
-Batchfile   7 mins          ███████▒░░░░░░░░░░░░░░░░░   29.26 %
+No activity tracked
 ```
 
 <!--END_SECTION:waka-->
