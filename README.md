@@ -16,7 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-No activity tracked
+From: 01 September 2022 - To: 08 September 2022
+
+C++    26 mins         ███████████████████████▓░   94.43 %
+Text   1 min           █▒░░░░░░░░░░░░░░░░░░░░░░░   05.57 %
 ```
 
 <!--END_SECTION:waka-->
