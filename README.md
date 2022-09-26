@@ -16,7 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 16 September 2022 - To: 23 September 2022
+From: 18 September 2022 - To: 25 September 2022
 
 C++        32 mins         █████████████▒░░░░░░░░░░░   53.07 %
 Makefile   14 mins         █████▓░░░░░░░░░░░░░░░░░░░   23.15 %
