@@ -16,7 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 30 September 2022 - To: 07 October 2022
+From: 01 October 2022 - To: 08 October 2022
 
 HTML     1 hr 16 mins    █████████████▒░░░░░░░░░░░   53.64 %
 Python   1 hr 5 mins     ███████████▒░░░░░░░░░░░░░   45.79 %
