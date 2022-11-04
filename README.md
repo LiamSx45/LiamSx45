@@ -16,7 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-No activity tracked
+From: 27 October 2022 - To: 03 November 2022
+
+PHP      48 mins         ███████████████░░░░░░░░░░   59.37 %
+C++      30 mins         █████████▓░░░░░░░░░░░░░░░   38.20 %
+Docker   1 min           ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.43 %
 ```
 
 <!--END_SECTION:waka-->
