@@ -16,7 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-No activity tracked
+From: 05 November 2022 - To: 12 November 2022
+
+PHP      29 mins         ██████████████▒░░░░░░░░░░   57.59 %
+Python   21 mins         ██████████▓░░░░░░░░░░░░░░   42.41 %
 ```
 
 <!--END_SECTION:waka-->
