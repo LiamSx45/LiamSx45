@@ -16,13 +16,12 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 11 November 2022 - To: 18 November 2022
+From: 12 November 2022 - To: 19 November 2022
 
-PHP             2 hrs 10 mins   ████████████▓░░░░░░░░░░░░   51.29 %
-Apache Config   50 mins         █████░░░░░░░░░░░░░░░░░░░░   19.89 %
-C++             49 mins         █████░░░░░░░░░░░░░░░░░░░░   19.44 %
-Python          21 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   08.48 %
-Other           2 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.83 %
+PHP             1 hr 41 mins    ████████████▒░░░░░░░░░░░░   49.71 %
+Apache Config   50 mins         ██████▒░░░░░░░░░░░░░░░░░░   24.86 %
+C++             49 mins         ██████░░░░░░░░░░░░░░░░░░░   24.29 %
+Other           2 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.04 %
 ```
 
 <!--END_SECTION:waka-->
