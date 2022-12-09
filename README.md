@@ -16,7 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 30 November 2022 - To: 07 December 2022
+From: 01 December 2022 - To: 08 December 2022
 
 C++           3 hrs 23 mins   ███████████████████░░░░░░   76.03 %
 PHP           1 hr 1 min      █████▓░░░░░░░░░░░░░░░░░░░   23.09 %
