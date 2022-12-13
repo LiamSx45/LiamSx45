@@ -16,11 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 04 December 2022 - To: 11 December 2022
+From: 05 December 2022 - To: 12 December 2022
 
-C++           2 hrs 57 mins   ██████████████████▒░░░░░░   73.40 %
-PHP           1 hr 1 min      ██████▒░░░░░░░░░░░░░░░░░░   25.66 %
-Objective-C   2 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.94 %
+C++           3 hrs 21 mins   ██████████████████▓░░░░░░   74.41 %
+PHP           1 hr 1 min      █████▓░░░░░░░░░░░░░░░░░░░   22.86 %
+Other         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.27 %
 ```
 
 <!--END_SECTION:waka-->
