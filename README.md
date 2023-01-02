@@ -16,7 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 24 December 2022 - To: 31 December 2022
+From: 25 December 2022 - To: 01 January 2023
 
 JavaScript      11 hrs 27 mins  ███████████████████▓░░░░░   78.98 %
 PHP             1 hr 31 mins    ██▓░░░░░░░░░░░░░░░░░░░░░░   10.55 %
