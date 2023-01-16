@@ -52,8 +52,8 @@ ___
 
 # 📝 Latest *Life in Focus* Podcast Episodes
 <!-- LIFEINFOCUS:START -->
-- [Episode 01: The Stigma of Mental Health with Colette Barron](https://lifeinfocuspod.com/episode/episode-01-the-stigma-of-mental-health-with-colette-barron)
-- [Trailer](https://lifeinfocuspod.com/episode/trailer)
+- [Episode 01: The Stigma of Mental Health with Colette Barron](https://lifeinfocuspod.com/episodes/S01EP01-Full)
+- [Trailer](https://lifeinfocuspod.com/episodes/trailer-full)
 <!-- LIFEINFOCUS:END -->
 
 # 🪴 Latest *Urban Garden Dreams* Podcast Episodes
