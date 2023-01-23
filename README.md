@@ -16,11 +16,12 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 14 January 2023 - To: 21 January 2023
+From: 15 January 2023 - To: 22 January 2023
 
-JavaScript   8 hrs 30 mins   ███████████████████████▓░   94.19 %
-XML          15 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.94 %
-PHP          15 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.87 %
+JavaScript      8 hrs 30 mins   ██████████████░░░░░░░░░░░   55.85 %
+PHP             6 hrs 26 mins   ██████████▓░░░░░░░░░░░░░░   42.28 %
+XML             15 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.74 %
+Apache Config   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.12 %
 ```
 
 <!--END_SECTION:waka-->
