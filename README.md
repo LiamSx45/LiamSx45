@@ -51,7 +51,7 @@ ___
 
 # 📝 Latest *Life in Focus* Podcast Episodes
 <!-- LIFEINFOCUS:START -->
-- [Episode 01: The Stigma of Mental Health with Colette Barron](https://lifeinfocuspod.com/episodes/S01EP01-Full)
+- [Episode 01: The Stigma of Mental Health with Colette Barron](https://sawyeroriginal.com/lifeinfocus?post=ep01)
 - [Trailer](https://lifeinfocuspod.com/episodes/trailer-full)
 <!-- LIFEINFOCUS:END -->
 
