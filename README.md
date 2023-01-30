@@ -45,8 +45,8 @@ ___
 
 # ✨ Latest *Sawyer Talks* Podcast Episodes
 <!-- SAWYER_TALKS:START -->
-- [Special Edition | PRIDE &#39;21: A Q&amp;A With Friends](https://sawyertalks.sawyeroriginal.com/episode-03/)
-- [Let’s Sip: Tea Time on a Monday Night? A Review of White Claw Iced Teas.](https://sawyertalks.sawyeroriginal.com/episode-01/)
+- [Special Edition | PRIDE &#39;21: A Q&amp;A With Friends](https://sawyeroriginal.com/sawyertalks?post=ep03)
+- [Let’s Sip: Tea Time on a Monday Night? A Review of White Claw Iced Teas.](https://sawyeroriginal.com/sawyertalks?post=ep01)
 <!-- SAWYER_TALKS:END -->
 
 # 📝 Latest *Life in Focus* Podcast Episodes
