@@ -16,7 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 01 February 2023 - To: 08 February 2023
+From: 02 February 2023 - To: 09 February 2023
 
 JavaScript   10 hrs 20 mins  ██████████████▓░░░░░░░░░░   58.82 %
 C++          4 hrs 42 mins   ██████▓░░░░░░░░░░░░░░░░░░   26.76 %
