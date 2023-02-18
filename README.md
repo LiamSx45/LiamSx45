@@ -16,14 +16,14 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 09 February 2023 - To: 16 February 2023
+From: 10 February 2023 - To: 17 February 2023
 
-JavaScript   5 hrs 15 mins   ███████████████▓░░░░░░░░░   63.15 %
-Python       2 hrs 44 mins   ████████▒░░░░░░░░░░░░░░░░   32.89 %
-PHP          8 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.76 %
-Docker       5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.12 %
-CSV          5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.05 %
-TypeScript   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 %
+Python       2 hrs 44 mins   ███████████████░░░░░░░░░░   60.53 %
+JavaScript   1 hr 27 mins    ████████░░░░░░░░░░░░░░░░░   32.18 %
+PHP          8 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.23 %
+Docker       5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.06 %
+CSV          5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.93 %
+TypeScript   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.06 %
 ```
 
 <!--END_SECTION:waka-->
