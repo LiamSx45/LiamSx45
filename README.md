@@ -16,14 +16,14 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 27 February 2023 - To: 06 March 2023
+From: 28 February 2023 - To: 07 March 2023
 
-JavaScript    13 hrs 4 mins   ███████████████████████▓░   95.15 %
-JSON          13 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.69 %
-PHP           9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.15 %
-CocoaPods     8 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.04 %
-Objective-C   7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.93 %
-Other         0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 %
+JavaScript    9 hrs 56 mins   ███████████████████████▒░   93.72 %
+JSON          13 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.19 %
+PHP           9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.49 %
+CocoaPods     8 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.34 %
+Objective-C   7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.20 %
+Other         0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 %
 ```
 
 <!--END_SECTION:waka-->
