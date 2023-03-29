@@ -16,10 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 20 March 2023 - To: 27 March 2023
+From: 21 March 2023 - To: 28 March 2023
 
-TypeScript   56 mins         ███████████████░░░░░░░░░░   60.28 %
-C++          36 mins         ██████████░░░░░░░░░░░░░░░   39.72 %
+C++          36 mins         ██████████████████████▓░░   90.86 %
+TypeScript   3 mins          ██▒░░░░░░░░░░░░░░░░░░░░░░   09.14 %
 ```
 
 <!--END_SECTION:waka-->
