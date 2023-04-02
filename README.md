@@ -16,9 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 24 March 2023 - To: 31 March 2023
+From: 25 March 2023 - To: 01 April 2023
 
-C++   36 mins         █████████████████████████   100.00 %
+TypeScript   1 hr 16 mins    ███████████████████████▓░   94.64 %
+JavaScript   3 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.50 %
+CocoaPods    0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.86 %
 ```
 
 <!--END_SECTION:waka-->
