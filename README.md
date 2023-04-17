@@ -16,14 +16,14 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 08 April 2023 - To: 15 April 2023
+From: 09 April 2023 - To: 16 April 2023
 
-TypeScript   5 hrs 24 mins   █████████████████░░░░░░░░   68.31 %
-JavaScript   1 hr 42 mins    █████▒░░░░░░░░░░░░░░░░░░░   21.56 %
-JSON         20 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.31 %
-PHP          14 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.15 %
-CocoaPods    9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.95 %
-Markdown     1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.25 %
+JavaScript   1 hr 42 mins    ███████████████░░░░░░░░░░   60.39 %
+TypeScript   58 mins         ████████▓░░░░░░░░░░░░░░░░   34.23 %
+JSON         6 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.79 %
+Markdown     1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.69 %
+Bash         0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.36 %
+PowerShell   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.35 %
 ```
 
 <!--END_SECTION:waka-->
