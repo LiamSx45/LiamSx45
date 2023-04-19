@@ -16,14 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 10 April 2023 - To: 17 April 2023
+From: 11 April 2023 - To: 18 April 2023
 
-JavaScript   1 hr 42 mins    ████████████████████████▒   96.92 %
-Markdown     1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.10 %
-Bash         0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.57 %
-PowerShell   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.56 %
-JSON         0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.52 %
-INI          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.17 %
+PowerShell   0 secs          █████████████████░░░░░░░░   67.93 %
+Bash         0 secs          ████████░░░░░░░░░░░░░░░░░   32.07 %
 ```
 
 <!--END_SECTION:waka-->
