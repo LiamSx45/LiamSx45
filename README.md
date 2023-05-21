@@ -16,11 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 12 May 2023 - To: 19 May 2023
+From: 13 May 2023 - To: 20 May 2023
 
-Other        12 hrs 54 mins  █████████████████░░░░░░░░   68.59 %
-TypeScript   5 hrs 45 mins   ███████▓░░░░░░░░░░░░░░░░░   30.57 %
-PHP          9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.84 %
+Other        9 hrs 57 mins   ████████████████▒░░░░░░░░   65.96 %
+TypeScript   5 hrs 8 mins    ████████▓░░░░░░░░░░░░░░░░   34.04 %
 JavaScript   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 %
 ```
 
