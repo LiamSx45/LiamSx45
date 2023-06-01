@@ -16,9 +16,9 @@ ___
 <!--START_SECTION:waka-->
 
 ```text
-From: 23 May 2023 - To: 30 May 2023
+From: 24 May 2023 - To: 31 May 2023
 
-Other   17 hrs 55 mins  █████████████████████████   100.00 %
+Other   22 hrs 48 mins  █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
