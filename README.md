@@ -16,12 +16,12 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 09 June 2023 - To: 16 June 2023
+From: 10 June 2023 - To: 17 June 2023
 
-Other        18 hrs 31 mins  █████████████████████████   99.53 %
-TypeScript   3 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.36 %
+Other        17 hrs 4 mins   █████████████████████████   99.43 %
+TypeScript   4 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.45 %
 JavaScript   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.07 %
-CSS          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 %
+CSS          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 %
 ```
 
 <!--END_SECTION:waka-->
