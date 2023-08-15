@@ -16,11 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 06 August 2023 - To: 13 August 2023
+From: 07 August 2023 - To: 14 August 2023
 
-Other   22 hrs 8 mins   █████████████████████████   99.66 %
-Git     2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.18 %
-PHP     2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.16 %
+Other   20 hrs 6 mins   █████████████████████████   99.82 %
+PHP     2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.18 %
 ```
 
 <!--END_SECTION:waka-->
