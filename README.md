@@ -16,9 +16,9 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 17 August 2023 - To: 24 August 2023
+From: 18 August 2023 - To: 25 August 2023
 
-Other   20 hrs 16 mins  █████████████████████████   100.00 %
+Other   24 hrs 19 mins  █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
