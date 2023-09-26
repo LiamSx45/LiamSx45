@@ -16,13 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 17 September 2023 - To: 24 September 2023
+From: 18 September 2023 - To: 25 September 2023
 
-Other          19 hrs 14 mins  ████████████████████████░   95.72 %
-Canva Design   47 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.91 %
-Markdown       2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.18 %
-INI            1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.11 %
-PHP            0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.07 %
+Other          9 hrs 14 mins   ███████████████████████▓░   94.92 %
+Canva Design   29 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.08 %
 ```
 
 <!--END_SECTION:waka-->
