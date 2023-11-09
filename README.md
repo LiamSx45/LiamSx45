@@ -16,10 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 30 October 2023 - To: 06 November 2023
+From: 31 October 2023 - To: 07 November 2023
 
-Other          11 hrs 13 mins  ████████████████████████▓   98.60 %
-Canva Design   9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.40 %
+Other          10 hrs 18 mins  ████████████████████████▓   98.46 %
+Canva Design   9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.52 %
+CSV            0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 %
 ```
 
 <!--END_SECTION:waka-->
