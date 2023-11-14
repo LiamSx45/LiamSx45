@@ -16,13 +16,13 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 04 November 2023 - To: 11 November 2023
+From: 05 November 2023 - To: 12 November 2023
 
-Other          9 hrs 11 mins   ████████████████████████░   96.03 %
-JavaScript     16 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.80 %
-Canva Design   3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.69 %
-HTML           1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.30 %
-JSON           0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.06 %
+Other        12 hrs 8 mins   ████████████████████████▒   97.48 %
+JavaScript   16 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.15 %
+HTML         1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.23 %
+JSON         0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 %
+CSS          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.04 %
 ```
 
 <!--END_SECTION:waka-->
