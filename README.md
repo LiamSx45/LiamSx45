@@ -16,10 +16,9 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 01 December 2023 - To: 08 December 2023
+From: 03 December 2023 - To: 10 December 2023
 
-Other          19 hrs 30 mins  █████████████████████████   99.94 %
-Canva Design   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.06 %
+Other   19 hrs 1 min    █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
