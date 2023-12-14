@@ -16,9 +16,9 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 04 December 2023 - To: 11 December 2023
+From: 06 December 2023 - To: 13 December 2023
 
-Other   19 hrs 15 mins  █████████████████████████   100.00 %
+Other   11 hrs 15 mins  █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
