@@ -16,11 +16,9 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 28 December 2023 - To: 04 January 2024
+From: 29 December 2023 - To: 05 January 2024
 
-Other   6 hrs 11 mins   ███████████████████████▓░   95.10 %
-PHP     19 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.88 %
-CSS     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.02 %
+Other   3 hrs 35 mins   █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
