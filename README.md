@@ -16,10 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 04 January 2024 - To: 11 January 2024
+From: 05 January 2024 - To: 12 January 2024
 
-Other   12 hrs 23 mins  ███████████████████████▓░   95.14 %
-C       37 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.86 %
+Other   12 hrs 28 mins  ███████████████████████▓░   95.17 %
+C       37 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.83 %
 ```
 
 <!--END_SECTION:waka-->
