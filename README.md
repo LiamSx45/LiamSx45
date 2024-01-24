@@ -16,11 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 15 January 2024 - To: 22 January 2024
+From: 16 January 2024 - To: 23 January 2024
 
-Other          9 hrs 15 mins   ████████████████████████░   96.62 %
-C              18 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.22 %
-Figma Design   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.13 %
+Other          7 hrs 48 mins   ████████████████████████░   95.96 %
+C              18 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.79 %
+Figma Design   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.21 %
 Canva Design   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 %
 ```
 
