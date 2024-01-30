@@ -16,11 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 21 January 2024 - To: 28 January 2024
+From: 22 January 2024 - To: 29 January 2024
 
-Other          11 hrs 23 mins  ████████████████████████▓   98.29 %
-C              10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.56 %
-Figma Design   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.15 %
+Other          9 hrs 3 mins    █████████████████████████   99.95 %
+Figma Design   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 %
 ```
 
 <!--END_SECTION:waka-->
