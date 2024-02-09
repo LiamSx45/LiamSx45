@@ -16,12 +16,9 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 31 January 2024 - To: 07 February 2024
+From: 01 February 2024 - To: 08 February 2024
 
-Other    5 hrs 55 mins   ██████████████████████░░░   87.69 %
-CSV      44 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.90 %
-Python   3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.79 %
-C        2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.62 %
+Other   6 hrs 1 min     █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
