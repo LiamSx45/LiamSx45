@@ -16,11 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 08 February 2024 - To: 15 February 2024
+From: 09 February 2024 - To: 16 February 2024
 
-Other    11 hrs 48 mins  ███████████████████████▓░   95.17 %
-Python   30 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.11 %
-CSV      5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.72 %
+Other    11 hrs 32 mins  ███████████████████████▓░   95.07 %
+Python   30 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.20 %
+CSV      5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.73 %
 ```
 
 <!--END_SECTION:waka-->
