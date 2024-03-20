@@ -16,10 +16,13 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 11 March 2024 - To: 18 March 2024
+From: 12 March 2024 - To: 19 March 2024
 
-Other    5 hrs 1 min     ████████████████████████▒   97.62 %
-Python   7 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.38 %
+Other        6 hrs 51 mins   ███████████████████▓░░░░░   79.26 %
+JavaScript   1 hr 29 mins    ████▒░░░░░░░░░░░░░░░░░░░░   17.32 %
+Python       7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.42 %
+HTML         6 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.34 %
+JSON         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.67 %
 ```
 
 <!--END_SECTION:waka-->
