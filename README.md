@@ -16,10 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 19 April 2024 - To: 26 April 2024
+From: 20 April 2024 - To: 27 April 2024
 
-Other          1 hr 55 mins    ████████████████████████░   96.08 %
-Canva Design   4 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.92 %
+Other          1 hr 35 mins    ███████████████████████▓░   95.31 %
+Canva Design   4 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   04.69 %
 ```
 
 <!--END_SECTION:waka-->
