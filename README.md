@@ -16,9 +16,9 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 May 2024 - To: 12 May 2024
+From: 06 May 2024 - To: 13 May 2024
 
-Other   12 hrs 59 mins  █████████████████████████   100.00 %
+Other   12 hrs 23 mins  █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
