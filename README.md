@@ -16,9 +16,13 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 23 May 2024 - To: 30 May 2024
+From: 24 May 2024 - To: 31 May 2024
 
-Other   3 hrs           █████████████████████████   100.00 %
+Other          6 hrs 5 mins    █████████████████████▓░░░   87.32 %
+JavaScript     18 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.42 %
+JSON           14 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.44 %
+TypeScript     6 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.55 %
+XML            6 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.46 %
 ```
 
 <!--END_SECTION:waka-->
