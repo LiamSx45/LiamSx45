@@ -16,11 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 07 June 2024 - To: 14 June 2024
+From: 08 June 2024 - To: 15 June 2024
 
-Other          2 hrs 24 mins   ███████████████████████▓░   94.32 %
-Canva Design   8 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.51 %
-CSV            0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.17 %
+Other          2 hrs 2 mins    ████████████████████████░   95.68 %
+Canva Design   5 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.12 %
+CSV            0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.20 %
 ```
 
 <!--END_SECTION:waka-->
