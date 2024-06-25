@@ -56,7 +56,7 @@ ___
 
 # 🪴 Latest *Urban Garden Dreams* Podcast Episodes
 <!-- URBANGARDEN:START -->
-- [Trailer](https://podcast.sawyeroriginal.com/@UrbanGardenDreams/episodes/trailer-khtnd)
+- [Trailer](https://urbangardendreams.com/episodes/trailer-full)
 <!-- URBANGARDEN:END -->
 
 # 💻 My Website
