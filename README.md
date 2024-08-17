@@ -16,10 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 08 August 2024 - To: 15 August 2024
+From: 09 August 2024 - To: 16 August 2024
 
-Other          12 hrs 36 mins  ████████████████████████▓   98.68 %
-Canva Design   10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.32 %
+Other          14 hrs 50 mins  ████████████████████████▓   98.88 %
+Canva Design   10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.12 %
 ```
 
 <!--END_SECTION:waka-->
