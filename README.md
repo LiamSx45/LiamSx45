@@ -16,13 +16,13 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 08 October 2024 - To: 15 October 2024
+From: 09 October 2024 - To: 16 October 2024
 
-Other         23 hrs          ███████████████████████▒░   93.30 %
-Swift         1 hr 9 mins     █▒░░░░░░░░░░░░░░░░░░░░░░░   04.71 %
-JavaScript    17 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.17 %
-Image (svg)   7 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.52 %
-Lua           4 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.29 %
+Other         25 hrs 50 mins  ███████████████████████▒░   93.98 %
+Swift         1 hr 10 mins    █░░░░░░░░░░░░░░░░░░░░░░░░   04.25 %
+JavaScript    17 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.05 %
+Image (svg)   7 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.47 %
+Lua           4 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.26 %
 ```
 
 <!--END_SECTION:waka-->
