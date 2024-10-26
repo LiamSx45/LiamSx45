@@ -16,12 +16,12 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 17 October 2024 - To: 24 October 2024
+From: 18 October 2024 - To: 25 October 2024
 
-Other        22 hrs 30 mins  ████████████████████████░   95.94 %
-Swift        43 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.07 %
+Other        22 hrs 41 mins  ████████████████████████▒   96.68 %
+Swift        28 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.03 %
 Python       10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.78 %
-Markdown     2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.21 %
+Markdown     7 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.50 %
 JavaScript   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 %
 ```
 
