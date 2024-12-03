@@ -16,10 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 24 November 2024 - To: 01 December 2024
+From: 25 November 2024 - To: 02 December 2024
 
-Other   25 hrs 31 mins  ████████████████████████▒   97.92 %
-Swift   32 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.08 %
+Other   24 hrs 21 mins  ████████████████████████▒   97.91 %
+Swift   31 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.09 %
 ```
 
 <!--END_SECTION:waka-->
