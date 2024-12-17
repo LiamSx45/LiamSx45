@@ -16,11 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 08 December 2024 - To: 15 December 2024
+From: 09 December 2024 - To: 16 December 2024
 
-Other         28 hrs 56 mins  ████████████████████████▓   98.01 %
-Swift         33 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.88 %
-Image (svg)   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.11 %
+Other         24 hrs 15 mins  ████████████████████████▓   99.07 %
+Swift         11 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.80 %
+Image (svg)   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.13 %
 ```
 
 <!--END_SECTION:waka-->
