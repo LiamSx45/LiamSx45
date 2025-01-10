@@ -16,11 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 01 January 2025 - To: 08 January 2025
+From: 02 January 2025 - To: 09 January 2025
 
-Other         14 hrs 1 min    ████████████████████████░   95.92 %
-Image (svg)   32 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.71 %
-Swift         3 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.37 %
+Other         17 hrs 21 mins  ████████████████████████▒   96.68 %
+Image (svg)   32 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.02 %
+Swift         3 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.31 %
 ```
 
 <!--END_SECTION:waka-->
