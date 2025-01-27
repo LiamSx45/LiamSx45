@@ -16,10 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 18 January 2025 - To: 25 January 2025
+From: 19 January 2025 - To: 26 January 2025
 
-Other         3 hrs 38 mins   ███████████████████████▓░   94.69 %
-Image (svg)   12 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.31 %
+Other         4 hrs 50 mins   ████████████████████████░   95.96 %
+Image (svg)   12 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.04 %
 ```
 
 <!--END_SECTION:waka-->
