@@ -16,12 +16,12 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 31 January 2025 - To: 07 February 2025
+From: 01 February 2025 - To: 08 February 2025
 
-Other      38 hrs 50 mins  █████████████████████████   99.43 %
-Swift      13 mins         ░░░░░░░░░░░░░░░░░░░░░░░░░   00.55 %
+Other      37 hrs 35 mins  ████████████████████████▓   98.16 %
+Swift      26 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.16 %
+Markdown   15 mins         ░░░░░░░░░░░░░░░░░░░░░░░░░   00.66 %
 Python     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 %
-Markdown   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 %
 ```
 
 <!--END_SECTION:waka-->
