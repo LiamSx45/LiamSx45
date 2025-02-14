@@ -16,12 +16,12 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 February 2025 - To: 12 February 2025
+From: 06 February 2025 - To: 13 February 2025
 
-Other        35 hrs 51 mins  ████████████████████████▒   97.81 %
-Swift        27 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.26 %
-Markdown     15 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.69 %
-Python       5 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.23 %
+Other        32 hrs 37 mins  ████████████████████████▒   97.66 %
+Swift        26 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.33 %
+Markdown     15 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.76 %
+Python       4 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.24 %
 JavaScript   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 %
 ```
 
