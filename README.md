@@ -16,13 +16,13 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 21 February 2025 - To: 28 February 2025
+From: 22 February 2025 - To: 01 March 2025
 
-Other         24 hrs 26 mins  ███████████████████████░░   92.02 %
-Image (svg)   1 hr 24 mins    █▒░░░░░░░░░░░░░░░░░░░░░░░   05.33 %
-JavaScript    33 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.11 %
-HTML          7 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.47 %
-Swift         0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 %
+Other         26 hrs 45 mins  ███████████████████████▓░   95.07 %
+JavaScript    42 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.54 %
+Image (svg)   29 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.73 %
+HTML          7 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.45 %
+CSS           3 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.20 %
 ```
 
 <!--END_SECTION:waka-->
