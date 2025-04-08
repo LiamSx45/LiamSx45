@@ -16,10 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 30 March 2025 - To: 06 April 2025
+From: 31 March 2025 - To: 07 April 2025
 
-Other        12 hrs 43 mins  ████████████████████████▒   97.27 %
-Swift        20 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.55 %
+Other        12 hrs 31 mins  ████████████████████████▒   97.23 %
+Swift        20 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.59 %
 JavaScript   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.18 %
 ```
 
