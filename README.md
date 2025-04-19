@@ -16,10 +16,11 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 10 April 2025 - To: 17 April 2025
+From: 11 April 2025 - To: 18 April 2025
 
-Other   16 hrs 21 mins  ████████████████████████▒   97.12 %
-Swift   29 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.88 %
+Other         12 hrs 42 mins  ████████████████████████░   96.50 %
+Swift         18 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.29 %
+Image (svg)   9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.21 %
 ```
 
 <!--END_SECTION:waka-->
