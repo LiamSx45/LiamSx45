@@ -16,7 +16,7 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 12 April 2025 - To: 19 April 2025
+From: 13 April 2025 - To: 20 April 2025
 
 Other         9 hrs 15 mins   ████████████████████████░   95.74 %
 Swift         13 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.39 %
