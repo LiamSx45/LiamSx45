@@ -16,10 +16,10 @@ ___
 <!--START_SECTION:waka-->
 
 ```txt
-From: 27 April 2025 - To: 04 May 2025
+From: 28 April 2025 - To: 05 May 2025
 
-Other         5 hrs 20 mins   ███████████████████████▒░   93.27 %
-Image (svg)   23 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.73 %
+Other         5 hrs 34 mins   ███████████████████████▒░   93.49 %
+Image (svg)   23 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.51 %
 ```
 
 <!--END_SECTION:waka-->
