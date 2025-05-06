@@ -46,9 +46,7 @@ Image (svg)   23 mins         █▓░░░░░░░░░░░░░░�
 ### 🌱 *Urban Garden Dreams*
 
 <!-- URBANGARDEN:START -->
-
-* [Trailer](https://urbangardendreams.com/episodes/trailer-full)
-
+- [Trailer](https://urbangardendreams.com/episodes/trailer-full)
 <!-- URBANGARDEN:END -->
 
 ---
