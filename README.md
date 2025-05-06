@@ -30,10 +30,8 @@ Image (svg)   23 mins         █▓░░░░░░░░░░░░░░�
 ### ✨ *Sawyer Talks*
 
 <!-- SAWYER_TALKS:START -->
-
-* [Special Edition | PRIDE '21: A Q\&A With Friends](https://sawyer-talks.captivate.fm/episode/special-edition-pride-21-a-qa-with-friends)
-* [Let’s Sip: Tea Time on a Monday Night? A Review of White Claw Iced Teas](https://sawyer-talks.captivate.fm/episode/lets-sip-tea-time-on-a-monday-night-a-review-of-white-claw-iced-teas-)
-
+- [Special Edition | PRIDE &#39;21: A Q&amp;A With Friends](https://sawyer-talks.captivate.fm/episode/special-edition-pride-21-a-qa-with-friends)
+- [Let’s Sip: Tea Time on a Monday Night? A Review of White Claw Iced Teas.](https://sawyer-talks.captivate.fm/episode/lets-sip-tea-time-on-a-monday-night-a-review-of-white-claw-iced-teas-)
 <!-- SAWYER_TALKS:END -->
 
 ### 🧠 *Life in Focus*
