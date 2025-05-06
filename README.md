@@ -37,10 +37,8 @@ Image (svg)   23 mins         █▓░░░░░░░░░░░░░░�
 ### 🧠 *Life in Focus*
 
 <!-- LIFEINFOCUS:START -->
-
-* [Episode 01: The Stigma of Mental Health with Colette Barron](https://sawyeroriginal.com/lifeinfocus?post=ep01)
-* [Trailer](https://lifeinfocuspod.com/episodes/trailer-full)
-
+- [Episode 01: The Stigma of Mental Health with Colette Barron](https://sawyeroriginal.com/lifeinfocus?post=ep01)
+- [Trailer](https://lifeinfocuspod.com/episodes/trailer-full)
 <!-- LIFEINFOCUS:END -->
 
 ### 🌱 *Urban Garden Dreams*
