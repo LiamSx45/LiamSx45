@@ -15,11 +15,10 @@ I’m **Liam Sawyer** — a creative technologist, automation engineer, and iOS 
 <!--START_SECTION:waka-->
 
 ```txt
-From: 21 October 2025 - To: 28 October 2025
+From: 22 October 2025 - To: 29 October 2025
 
-Other         9 hrs 34 mins   ████████████████████████▓   99.04 %
-Python        5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.89 %
-Image (svg)   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.07 %
+Other    6 hrs 40 mins   ████████████████████████▓   98.75 %
+Python   5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.25 %
 ```
 
 <!--END_SECTION:waka-->
