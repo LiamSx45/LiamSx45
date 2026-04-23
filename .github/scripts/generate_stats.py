@@ -2,7 +2,8 @@
 """Generate custom GitHub stats SVGs (languages + overview) including private repos.
 
 Outputs:
-  generated/languages.svg  - top languages by bytes across all owned repos
+  generated/languages.svg  - top languages across all non-fork owned repos
+                              (averaged per-repo proportions, not raw bytes)
   generated/stats.svg      - total stars, commits (all-time), PRs, issues, contributed-to
 """
 import os
@@ -106,17 +107,34 @@ def fetch_owned_repos():
     return repos
 
 
-def fetch_language_bytes(repos):
-    langs = {}
+def fetch_language_proportions(repos):
+    """Average per-repo language percentage across all non-fork repos.
+
+    Each repo contributes equally regardless of size. Raw byte totals are
+    misleading because one vendored library or generated artifact (e.g. a
+    Makefile build directory, a C dependency, a pawn game-server binary)
+    can dwarf hundreds of small repos and bury the languages actually used
+    most often. Averaging proportions matches how liamsawyer.com reports
+    language usage and reflects real usage patterns more honestly.
+    """
+    aggregate = {}
+    repo_count = 0
     for repo in repos:
         if repo.get('fork'):
             continue
         lr = requests.get(repo['languages_url'], headers=HEADERS)
         if lr.status_code != 200:
             continue
-        for lang, b in lr.json().items():
-            langs[lang] = langs.get(lang, 0) + b
-    return langs
+        rep_langs = lr.json()
+        total = sum(rep_langs.values())
+        if total == 0:
+            continue
+        repo_count += 1
+        for lang, b in rep_langs.items():
+            aggregate[lang] = aggregate.get(lang, 0) + (b / total * 100)
+    if repo_count == 0:
+        return {}
+    return {lang: pct / repo_count for lang, pct in aggregate.items()}
 
 
 def fetch_user_stats():
@@ -277,9 +295,9 @@ def main():
     repos = fetch_owned_repos()
     print(f'  {len(repos)} repos')
 
-    print('Fetching language bytes…')
-    langs = fetch_language_bytes(repos)
-    print(f'  {len(langs)} languages')
+    print('Fetching per-repo language proportions…')
+    langs = fetch_language_proportions(repos)
+    print(f'  {len(langs)} languages across {sum(1 for r in repos if not r.get("fork"))} non-fork repos')
 
     print('Fetching user stats via GraphQL…')
     stats = fetch_user_stats()
