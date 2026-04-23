@@ -34,14 +34,14 @@ Profile
    🎂 GitHub Age            Jun 2018 (7 yrs, 10 mo)
 
 Contributions (All-Time, incl. private)
-   🔥 Total Commits         990
+   🔥 Total Commits         991
    🔀 Total PRs             0
    ✅ Total PR Reviews      0
    💬 Total Issues          10
    📦 Repos Contributed To  19
 
 Activity (2026)
-   📈 Total Contributions   320
+   📈 Total Contributions   321
    🗓️  Active Days          22 / 113
    🔥 Current Streak        18 days
    ⚡ Longest Streak        18 days
@@ -62,7 +62,21 @@ Activity (2026)
    Other       11.83 %  ██▓░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-<sub>Last updated: Apr 23, 2026 · 18:28 UTC · Generated from private + public repos.</sub>
+**🗓️ Contribution Heatmap** (last 52 weeks)
+
+```text
+   Sun  ░░░░░░░░▒░░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█▓
+        ░░▒░░▓░░░░▒░▓░░░▒▓░░░░░░░▓░▓░░░░░░░░░░░░░░░░░░▓░░█▓▓
+   Tue  ░▓▒▒░▓░▓░░░▒░░░░░░░░░░░▓░░░░░░░░░░░░░░░░░░▒░░░░░░███
+        ░▓░▓▓▓░▓░░░░░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░░▓▓█
+   Thu  ▒░▓░░▓▓░░░▒░░░░░░░░░░░▒░░░░░░▓▒░░░░░░░░░░░░░░░░░░░▓██
+        ░░▒░░░░▒░░░░░░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░░█▓
+   Sat  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░██▓
+
+         Less  ░ ▒ ▓ █  More          451 contributions in the last year
+```
+
+<sub>Last updated: Apr 23, 2026 · 18:32 UTC · Generated from private + public repos.</sub>
 
 <!-- GH_STATS:END -->
 
