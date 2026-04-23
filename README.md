@@ -22,6 +22,48 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 <sub>Generated daily by a GitHub Action. Includes private repositories via GraphQL `restrictedContributionsCount`; language breakdown is a per-repo proportional average so one vendored library can't skew the totals.</sub>
 
 <!-- GH_STATS:START -->
+
+**⚡ Profile Metrics**
+
+```text
+Profile
+   ⭐ Total Stars Earned    5
+   👥 Followers             5
+   🧭 Following             4
+   📁 Public Repos (owned)  67
+   🎂 GitHub Age            Jun 2018 (7 yrs, 10 mo)
+
+Contributions (All-Time, incl. private)
+   🔥 Total Commits         990
+   🔀 Total PRs             0
+   ✅ Total PR Reviews      0
+   💬 Total Issues          10
+   📦 Repos Contributed To  19
+
+Activity (2026)
+   📈 Total Contributions   320
+   🗓️  Active Days          22 / 113
+   🔥 Current Streak        18 days
+   ⚡ Longest Streak        18 days
+
+```
+
+**💻 Most Used Languages** (per-repo average across all non-fork repos)
+
+```text
+   Swift       35.34 %  ████████▓░░░░░░░░░░░░░░░░
+   TypeScript  26.58 %  ██████▒░░░░░░░░░░░░░░░░░░
+   HTML         6.87 %  █▓░░░░░░░░░░░░░░░░░░░░░░░
+   JavaScript   5.84 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
+   Python       4.07 %  █░░░░░░░░░░░░░░░░░░░░░░░░
+   PHP          3.85 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
+   CSS          3.33 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
+   C            2.29 %  ▒░░░░░░░░░░░░░░░░░░░░░░░░
+   Other       11.83 %  ██▓░░░░░░░░░░░░░░░░░░░░░░
+```
+
+<sub>Last updated: Apr 23, 2026 · 18:28 UTC · Generated from private + public repos.</sub>
+
 <!-- GH_STATS:END -->
 
 ---
