@@ -159,9 +159,7 @@ def fetch_user_stats():
         totals['contributed_to'] = max(totals['contributed_to'], cc['totalRepositoriesWithContributedCommits'])
         year += 1
 
-    # Day-level calendar: fetch this year for headline stats AND last ~52
-    # weeks (may span 2 calendar years) for the heatmap. contributionsCollection
-    # windows are capped at 1 year so we do two queries.
+    # Day-level calendar for this year — powers active-days count and both streaks.
     start_of_year = datetime(now.year, 1, 1, tzinfo=timezone.utc)
     cal_q = """
     query($from: DateTime!, $to: DateTime!) {
@@ -169,7 +167,7 @@ def fetch_user_stats():
         contributionsCollection(from: $from, to: $to) {
           contributionCalendar {
             totalContributions
-            weeks { contributionDays { date weekday contributionCount } }
+            weeks { contributionDays { date contributionCount } }
           }
         }
       }
@@ -180,12 +178,6 @@ def fetch_user_stats():
 
     totals['contributions_this_year'] = this_year_cal['totalContributions']
     totals['active_days_this_year']   = sum(1 for _, c in days if c > 0)
-
-    # Trailing 52 weeks for the heatmap
-    heatmap_from = now.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(weeks=52)
-    heatmap_cal = gql(cal_q, {'from': heatmap_from.isoformat(), 'to': now.isoformat()})['viewer']['contributionsCollection']['contributionCalendar']
-    totals['heatmap_weeks']            = heatmap_cal['weeks']
-    totals['heatmap_total']            = heatmap_cal['totalContributions']
 
     longest = run = 0
     for _, c in days:
@@ -210,6 +202,48 @@ def fetch_user_stats():
     totals['current_streak'] = current
 
     return totals
+
+
+def fetch_recent_repos(limit, exclude_name_with_owner):
+    """Most-recently-pushed repos the viewer owns, public + private.
+
+    Excludes forks, archived repos, and the viewer's profile README repo
+    (`login/login`) so the generator's own automated commits never push
+    this profile to the top of its own list.
+    """
+    query = """
+    query {
+      viewer {
+        repositories(
+          first: 30,
+          ownerAffiliations: OWNER,
+          orderBy: {field: PUSHED_AT, direction: DESC}
+        ) {
+          nodes {
+            name
+            nameWithOwner
+            description
+            isPrivate
+            isFork
+            isArchived
+            pushedAt
+            primaryLanguage { name }
+          }
+        }
+      }
+    }
+    """
+    nodes = gql(query)['viewer']['repositories']['nodes']
+    out = []
+    for n in nodes:
+        if n['isFork'] or n['isArchived']:
+            continue
+        if n['nameWithOwner'] == exclude_name_with_owner:
+            continue
+        out.append(n)
+        if len(out) >= limit:
+            break
+    return out
 
 
 def total_stars(repos):
@@ -245,37 +279,65 @@ def bar(pct, width=BAR_WIDTH):
     return s[:width]
 
 
-def render_heatmap(weeks, total):
-    """7-row × N-column ASCII heatmap of the trailing 52 weeks.
+def ago(dt, now):
+    """Compact relative-time string (e.g. '3h ago', '2w ago')."""
+    secs = int((now - dt).total_seconds())
+    if secs < 60:        return f'{secs}s ago'
+    mins = secs // 60
+    if mins < 60:        return f'{mins}m ago'
+    hrs = mins // 60
+    if hrs < 24:         return f'{hrs}h ago'
+    days = hrs // 24
+    if days < 7:         return f'{days}d ago'
+    if days < 30:        return f'{days // 7}w ago'
+    if days < 365:       return f'{days // 30}mo ago'
+    return f'{days // 365}y ago'
 
-    Each cell is one day, mapped into 4 intensity buckets based on quartiles
-    of the user's own non-zero days (so someone averaging 2 commits/day gets
-    a meaningful spread, not everything crammed into the lowest bucket).
-    """
-    counts = [d['contributionCount'] for w in weeks for d in w['contributionDays']]
-    nonzero = sorted(c for c in counts if c > 0)
-    if nonzero:
-        q1 = nonzero[len(nonzero) // 4]
-        q3 = nonzero[(3 * len(nonzero)) // 4]
-    else:
-        q1 = q3 = 0
 
-    def cell(c):
-        if c == 0:      return '░'  # no contributions
-        if c <= q1:     return '▒'  # bottom 25% of active days
-        if c <= q3:     return '▓'  # middle 50%
-        return '█'                   # top 25%
+def recency_block(dt, now):
+    """Map how fresh a push is onto a block char (matches the heatmap language)."""
+    days = (now - dt).total_seconds() / 86400
+    if days < 1:   return '█'  # pushed within 24h
+    if days < 7:   return '▓'  # this week
+    if days < 30:  return '▒'  # this month
+    return '░'                  # older
 
-    # GitHub returns each week as 7 ordered contributionDays starting on Sun.
-    rows = [[], [], [], [], [], [], []]
-    for w in weeks:
-        for d in w['contributionDays']:
-            rows[d['weekday']].append(cell(d['contributionCount']))
 
-    day_labels = ['Sun', '   ', 'Tue', '   ', 'Thu', '   ', 'Sat']
-    lines = [f'   {label}  {"".join(row)}' for label, row in zip(day_labels, rows)]
+def render_recent_repos(repos, now):
+    """Render the 'currently building' block with a recency indicator per repo."""
+    if not repos:
+        return ''
+
+    parsed = []
+    for r in repos:
+        pushed = datetime.fromisoformat(r['pushedAt'].replace('Z', '+00:00'))
+        parsed.append({
+            'name':    r['name'],
+            'lang':    (r.get('primaryLanguage') or {}).get('name') or '—',
+            'desc':    (r.get('description') or '').strip(),
+            'private': r['isPrivate'],
+            'pushed':  pushed,
+        })
+
+    name_w = max(len(p['name']) for p in parsed)
+    lang_w = max(len(p['lang']) for p in parsed)
+    ago_w  = max(len(ago(p['pushed'], now)) for p in parsed)
+
+    lines = []
+    for p in parsed:
+        block = recency_block(p['pushed'], now)
+        name  = p['name'].ljust(name_w)
+        lang  = p['lang'].ljust(lang_w)
+        rel   = ago(p['pushed'], now).ljust(ago_w)
+        tag   = '  🔒 private' if p['private'] else ''
+        lines.append(f'   {block}  {name}   {lang}   · {rel}{tag}')
+        if p['desc']:
+            desc = p['desc']
+            if len(desc) > 80:
+                desc = desc[:77].rstrip() + '…'
+            lines.append(f'         └ {desc}')
     lines.append('')
-    lines.append(f'         Less  ░ ▒ ▓ █  More          {total:,} contributions in the last year')
+    lines.append('      █  last 24h     ▓  this week     ▒  this month     ░  older')
     return '\n'.join(lines)
 
 
@@ -293,99 +355,105 @@ def humanize_duration(start, end):
     return ', '.join(parts) or '< 1 mo'
 
 
-def render_block(stats, langs, stars, repo_count):
+def render_block(stats, langs, stars, repo_count, recent_repos):
     now = datetime.now(timezone.utc)
     age = humanize_duration(stats['created_at'], now)
     joined = stats['created_at'].strftime('%b %Y')
 
-    # --- Profile & activity stats ---
-    rows = [
-        ('Profile', [
+    # --- Stat sections: Profile / Contributions (all-time) / Activity (ytd) ---
+    sections = [
+        ('👤 Profile', '', [
             ('⭐ Total Stars Earned',          fmt_int(stars)),
             ('👥 Followers',                  fmt_int(stats['followers'])),
             ('🧭 Following',                  fmt_int(stats['following'])),
             ('📁 Public Repos (owned)',       fmt_int(repo_count)),
             ('🎂 GitHub Age',                 f"{joined} ({age})"),
         ]),
-        ('Contributions (All-Time, incl. private)', [
+        ('📊 Contributions', '(all-time, includes private repos)', [
             ('🔥 Total Commits',              fmt_int(stats['commits'])),
             ('🔀 Total PRs',                  fmt_int(stats['prs'])),
             ('✅ Total PR Reviews',           fmt_int(stats['reviews'])),
             ('💬 Total Issues',               fmt_int(stats['issues'])),
             ('📦 Repos Contributed To',       fmt_int(stats['contributed_to'])),
         ]),
-        (f'Activity ({now.year})', [
+        (f'📈 Activity ({now.year})', '', [
             ('📈 Total Contributions',        fmt_int(stats['contributions_this_year'])),
-            ('🗓️  Active Days',               f"{stats['active_days_this_year']} / {(now.timetuple().tm_yday)}"),
+            ('🗓️  Active Days',               f"{stats['active_days_this_year']} / {now.timetuple().tm_yday}"),
             ('🔥 Current Streak',             f"{stats['current_streak']} days"),
             ('⚡ Longest Streak',              f"{stats['longest_streak']} days"),
         ]),
     ]
 
-    # Compute label column width. Emojis render ~2 columns wide in most
-    # monospace fonts (including the one GitHub uses); variation selectors
-    # (U+FE0F) are zero-width.
+    # Label column width — computed across all three sections so the
+    # value columns line up consistently even though each section gets
+    # its own code fence.
     def visual_len(s):
         width = 0
         for ch in s:
             o = ord(ch)
             if o == 0xFE0F:
-                continue
+                continue  # variation selector renders zero-width
             if o >= 0x2600:
-                width += 2
+                width += 2  # most emojis render ~2 columns wide
             else:
                 width += 1
         return width
 
     max_label = 0
-    for _, section in rows:
-        for label, _ in section:
+    for _, _, items in sections:
+        for label, _ in items:
             max_label = max(max_label, visual_len(label))
-    max_label += 2  # little breathing room
+    max_label += 2
 
-    stats_lines = []
-    for title, items in rows:
-        stats_lines.append(f'{title}')
-        for label, value in items:
-            pad = ' ' * (max_label - visual_len(label))
-            stats_lines.append(f'   {label}{pad}{value}')
-        stats_lines.append('')
+    def render_section_rows(items):
+        return [
+            f'   {label}{" " * (max_label - visual_len(label))}{value}'
+            for label, value in items
+        ]
 
     # --- Language breakdown (top 8) ---
-    top = sorted(langs.items(), key=lambda x: x[1], reverse=True)[:8]
-    tail_pct = sum(pct for lang, pct in sorted(langs.items(), key=lambda x: x[1], reverse=True)[8:])
+    sorted_langs = sorted(langs.items(), key=lambda x: x[1], reverse=True)
+    top = sorted_langs[:8]
+    tail_pct = sum(pct for _, pct in sorted_langs[8:])
 
     max_lang = max((len(l) for l, _ in top), default=0)
-    lang_lines = []
-    for lang, pct in top:
-        lang_lines.append(f'   {lang:<{max_lang}}  {pct:5.2f} %  {bar(pct)}')
+    lang_lines = [
+        f'   {lang:<{max_lang}}  {pct:5.2f} %  {bar(pct)}'
+        for lang, pct in top
+    ]
     if tail_pct > 0:
         lang_lines.append(f'   {"Other":<{max_lang}}  {tail_pct:5.2f} %  {bar(tail_pct)}')
 
-    # --- Contribution heatmap (trailing 52 weeks) ---
-    heatmap = render_heatmap(stats['heatmap_weeks'], stats['heatmap_total'])
+    # --- Currently building (recent repos) ---
+    recent = render_recent_repos(recent_repos, now)
 
     # --- Assemble the block ---
     updated = now.strftime('%b %d, %Y · %H:%M UTC')
     block = []
-    block.append('**⚡ Profile Metrics**')
-    block.append('')
-    block.append('```text')
-    block.extend(stats_lines)
-    block.append('```')
-    block.append('')
-    block.append('**💻 Most Used Languages** (per-repo average across all non-fork repos)')
+    for heading, subtitle, items in sections:
+        suffix = f' <sub>{subtitle}</sub>' if subtitle else ''
+        block.append(f'**{heading}**{suffix}')
+        block.append('')
+        block.append('```text')
+        block.extend(render_section_rows(items))
+        block.append('```')
+        block.append('')
+
+    block.append('**💻 Most Used Languages** <sub>per-repo average across all non-fork repos</sub>')
     block.append('')
     block.append('```text')
     block.extend(lang_lines)
     block.append('```')
     block.append('')
-    block.append('**🗓️ Contribution Heatmap** (last 52 weeks)')
-    block.append('')
-    block.append('```text')
-    block.append(heatmap)
-    block.append('```')
-    block.append('')
+
+    if recent:
+        block.append('**🛠️ Currently Building** <sub>5 most recent pushes, private included</sub>')
+        block.append('')
+        block.append('```text')
+        block.append(recent)
+        block.append('```')
+        block.append('')
+
     block.append(f'<sub>Last updated: {updated} · Generated from private + public repos.</sub>')
     return '\n'.join(block)
 
@@ -439,7 +507,14 @@ def main():
         f'active_days={stats["active_days_this_year"]}'
     )
 
-    block = render_block(stats, langs, stars, non_fork)
+    print('Fetching recent repos…')
+    # Exclude the profile README repo so our own stats-bot push doesn't
+    # dominate the "currently building" list every run.
+    profile_repo = f'{stats["login"]}/{stats["login"]}'
+    recent = fetch_recent_repos(limit=5, exclude_name_with_owner=profile_repo)
+    print(f'  {len(recent)} recent repos (excluding {profile_repo})')
+
+    block = render_block(stats, langs, stars, non_fork, recent)
     update_readme(block)
 
 
