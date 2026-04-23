@@ -69,17 +69,21 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **🛠️ Currently Building** <sub>5 most recent pushes, private included</sub>
 
 ```text
-   █  sawyer-original-website   TypeScript   · 40m ago  🔒 private
-   █  freshservice-apps         JavaScript   · 58m ago  🔒 private
+   █  sawyer-original-website   TypeScript   · 51m ago  🔒 private
+         └ Personal portfolio website — built with Next.js, TypeScript, and Tailwind CSS
+   █  freshservice-apps         JavaScript   · 1h ago   🔒 private
          └ Collection of custom Freshservice apps (FDK).
    █  botanicbase-web-main      TypeScript   · 1h ago   🔒 private
+         └ Website for the BotanicBase iOS app — built with Next.js and TypeScript
    █  botanicbase2026           Swift        · 1h ago   🔒 private
+         └ BotanicBase iOS app (2026) — plant care companion built with Swift
    █  botanicbase-n8n-backup    —            · 2h ago   🔒 private
+         └ n8n workflow backups for BotanicBase automations — exported workflow and back…
 
       █  last 24h     ▓  this week     ▒  this month     ░  older
 ```
 
-<sub>Last updated: Apr 23, 2026 · 18:36 UTC · Generated from private + public repos.</sub>
+<sub>Last updated: Apr 23, 2026 · 18:46 UTC · Generated from private + public repos.</sub>
 
 <!-- GH_STATS:END -->
 
