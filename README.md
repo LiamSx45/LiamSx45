@@ -23,32 +23,36 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 
 <!-- GH_STATS:START -->
 
-**⚡ Profile Metrics**
+**👤 Profile**
 
 ```text
-Profile
    ⭐ Total Stars Earned    5
    👥 Followers             5
    🧭 Following             4
    📁 Public Repos (owned)  67
    🎂 GitHub Age            Jun 2018 (7 yrs, 10 mo)
+```
 
-Contributions (All-Time, incl. private)
-   🔥 Total Commits         991
+**📊 Contributions** <sub>(all-time, includes private repos)</sub>
+
+```text
+   🔥 Total Commits         992
    🔀 Total PRs             0
    ✅ Total PR Reviews      0
    💬 Total Issues          10
    📦 Repos Contributed To  19
+```
 
-Activity (2026)
-   📈 Total Contributions   321
+**📈 Activity (2026)**
+
+```text
+   📈 Total Contributions   322
    🗓️  Active Days          22 / 113
    🔥 Current Streak        18 days
    ⚡ Longest Streak        18 days
-
 ```
 
-**💻 Most Used Languages** (per-repo average across all non-fork repos)
+**💻 Most Used Languages** <sub>per-repo average across all non-fork repos</sub>
 
 ```text
    Swift       35.34 %  ████████▓░░░░░░░░░░░░░░░░
@@ -62,21 +66,20 @@ Activity (2026)
    Other       11.83 %  ██▓░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-**🗓️ Contribution Heatmap** (last 52 weeks)
+**🛠️ Currently Building** <sub>5 most recent pushes, private included</sub>
 
 ```text
-   Sun  ░░░░░░░░▒░░▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█▓
-        ░░▒░░▓░░░░▒░▓░░░▒▓░░░░░░░▓░▓░░░░░░░░░░░░░░░░░░▓░░█▓▓
-   Tue  ░▓▒▒░▓░▓░░░▒░░░░░░░░░░░▓░░░░░░░░░░░░░░░░░░▒░░░░░░███
-        ░▓░▓▓▓░▓░░░░░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░░▓▓█
-   Thu  ▒░▓░░▓▓░░░▒░░░░░░░░░░░▒░░░░░░▓▒░░░░░░░░░░░░░░░░░░░▓██
-        ░░▒░░░░▒░░░░░░░░░░░░░░░░░░░█░░░░░░░░░░░░░░░░░░░░░░█▓
-   Sat  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒░░░░██▓
+   █  sawyer-original-website   TypeScript   · 40m ago  🔒 private
+   █  freshservice-apps         JavaScript   · 58m ago  🔒 private
+         └ Collection of custom Freshservice apps (FDK).
+   █  botanicbase-web-main      TypeScript   · 1h ago   🔒 private
+   █  botanicbase2026           Swift        · 1h ago   🔒 private
+   █  botanicbase-n8n-backup    —            · 2h ago   🔒 private
 
-         Less  ░ ▒ ▓ █  More          451 contributions in the last year
+      █  last 24h     ▓  this week     ▒  this month     ░  older
 ```
 
-<sub>Last updated: Apr 23, 2026 · 18:32 UTC · Generated from private + public repos.</sub>
+<sub>Last updated: Apr 23, 2026 · 18:36 UTC · Generated from private + public repos.</sub>
 
 <!-- GH_STATS:END -->
 
