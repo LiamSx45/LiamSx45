@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
-"""Generate custom GitHub stats SVGs (languages + overview) including private repos.
+"""Generate a text-based GitHub stats block for the profile README.
 
-Outputs:
-  generated/languages.svg  - top languages across all non-fork owned repos
-                              (averaged per-repo proportions, not raw bytes)
-  generated/stats.svg      - total stars, commits (all-time), PRs, issues, contributed-to
+Writes a block of markdown between the markers:
+    <!-- GH_STATS:START -->  ...generated content...  <!-- GH_STATS:END -->
+
+Text rendering was chosen over SVG so the block:
+  - auto-themes with the viewer's GitHub theme (no <picture> hacks)
+  - is copy-pasteable and information-dense
+  - doesn't depend on raw.githubusercontent.com caching
+
+All stats include private-repo activity via GraphQL's
+`restrictedContributionsCount` and per-repo language proportions.
 """
 import os
+import re
 import sys
 from datetime import datetime, timezone
 
@@ -19,55 +26,11 @@ HEADERS = {
 }
 GQL_URL = 'https://api.github.com/graphql'
 
-COLORS = {
-    'Python':       '#3572A5',
-    'JavaScript':   '#f1e05a',
-    'TypeScript':   '#3178c6',
-    'Swift':        '#F05138',
-    'Java':         '#b07219',
-    'Kotlin':       '#A97BFF',
-    'Ruby':         '#701516',
-    'Go':           '#00ADD8',
-    'Rust':         '#dea584',
-    'C++':          '#f34b7d',
-    'C':            '#555555',
-    'C#':           '#178600',
-    'HTML':         '#e34c26',
-    'CSS':          '#563d7c',
-    'Shell':        '#89e051',
-    'Dockerfile':   '#384d54',
-    'PHP':          '#4F5D95',
-    'Dart':         '#00B4AB',
-    'Objective-C':  '#438eff',
-    'SCSS':         '#c6538c',
-    'Vue':          '#41b883',
-    'Makefile':     '#427819',
-    'Pawn':         '#dbb284',
-}
+README_PATH = 'README.md'
+MARKER_START = '<!-- GH_STATS:START -->'
+MARKER_END = '<!-- GH_STATS:END -->'
 
-FF = "'Segoe UI',Ubuntu,sans-serif"
-
-# Two themes — keys match GitHub's dark/light readme rendering.
-THEMES = {
-    'dark': {
-        'bg':     '#0d1117',
-        'border': '#21262d',
-        'title':  '#e6edf3',
-        'text':   '#c9d1d9',
-        'muted':  '#8b949e',
-        'accent': '#58a6ff',
-        'track':  '#21262d',
-    },
-    'light': {
-        'bg':     '#ffffff',
-        'border': '#d0d7de',
-        'title':  '#1f2328',
-        'text':   '#1f2328',
-        'muted':  '#656d76',
-        'accent': '#0969da',
-        'track':  '#eaeef2',
-    },
-}
+BAR_WIDTH = 25
 
 
 # ---------- API helpers ----------
@@ -85,7 +48,6 @@ def gql(query, variables=None):
 
 
 def fetch_owned_repos():
-    """Return list of (full_name, languages_url, stargazers_count, fork) for owned repos (incl. private)."""
     repos = []
     page = 1
     while True:
@@ -112,10 +74,9 @@ def fetch_language_proportions(repos):
 
     Each repo contributes equally regardless of size. Raw byte totals are
     misleading because one vendored library or generated artifact (e.g. a
-    Makefile build directory, a C dependency, a pawn game-server binary)
+    Makefile build directory, a C dependency, a Pawn game-server binary)
     can dwarf hundreds of small repos and bury the languages actually used
-    most often. Averaging proportions matches how liamsawyer.com reports
-    language usage and reflects real usage patterns more honestly.
+    most often.
     """
     aggregate = {}
     repo_count = 0
@@ -138,13 +99,14 @@ def fetch_language_proportions(repos):
 
 
 def fetch_user_stats():
-    """All-time totals via GraphQL: commits, PRs, issues, repos contributed to, followers."""
+    """All-time totals + this-year activity metrics via GraphQL."""
     user_q = """
     query {
       viewer {
         login
         createdAt
         followers { totalCount }
+        following { totalCount }
       }
     }
     """
@@ -154,15 +116,18 @@ def fetch_user_stats():
     now = datetime.now(timezone.utc)
 
     totals = {
-        'commits': 0,
-        'prs': 0,
-        'issues': 0,
-        'reviews': 0,
+        'login':          login,
+        'created_at':     created,
+        'followers':      viewer['followers']['totalCount'],
+        'following':      viewer['following']['totalCount'],
+        'commits':        0,
+        'prs':            0,
+        'issues':         0,
+        'reviews':        0,
         'contributed_to': 0,
-        'followers': viewer['followers']['totalCount'],
     }
 
-    # contributionsCollection windows max 1 year — iterate per calendar year from createdAt.
+    # contributionsCollection windows max 1 year — iterate per calendar year.
     year = created.year
     while year <= now.year:
         start = datetime(year, 1, 1, tzinfo=timezone.utc)
@@ -187,16 +152,55 @@ def fetch_user_stats():
         }
         """
         cc = gql(q, {'from': start.isoformat(), 'to': end.isoformat()})['viewer']['contributionsCollection']
-        # restrictedContributionsCount covers contributions to private repos the viewer can't expose
         totals['commits'] += cc['totalCommitContributions'] + cc['restrictedContributionsCount']
-        totals['prs'] += cc['totalPullRequestContributions']
-        totals['issues'] += cc['totalIssueContributions']
+        totals['prs']     += cc['totalPullRequestContributions']
+        totals['issues']  += cc['totalIssueContributions']
         totals['reviews'] += cc['totalPullRequestReviewContributions']
-        # contributed_to: take the max across years (avoids double-counting)
         totals['contributed_to'] = max(totals['contributed_to'], cc['totalRepositoriesWithContributedCommits'])
         year += 1
 
-    totals['login'] = login
+    # Day-level contribution calendar for this year → active days + streaks.
+    start_of_year = datetime(now.year, 1, 1, tzinfo=timezone.utc)
+    cal_q = """
+    query($from: DateTime!, $to: DateTime!) {
+      viewer {
+        contributionsCollection(from: $from, to: $to) {
+          contributionCalendar {
+            totalContributions
+            weeks { contributionDays { date contributionCount } }
+          }
+        }
+      }
+    }
+    """
+    cal = gql(cal_q, {'from': start_of_year.isoformat(), 'to': now.isoformat()})['viewer']['contributionsCollection']['contributionCalendar']
+    days = [(d['date'], d['contributionCount']) for w in cal['weeks'] for d in w['contributionDays']]
+
+    totals['contributions_this_year'] = cal['totalContributions']
+    totals['active_days_this_year']   = sum(1 for _, c in days if c > 0)
+
+    longest = run = 0
+    for _, c in days:
+        if c > 0:
+            run += 1
+            longest = max(longest, run)
+        else:
+            run = 0
+    totals['longest_streak'] = longest
+
+    # Current streak — trailing consecutive days with contributions.
+    # Don't penalize for today being empty (user may not have coded yet).
+    today_str = now.strftime('%Y-%m-%d')
+    current = 0
+    for date, c in reversed(days):
+        if date == today_str and c == 0:
+            continue
+        if c > 0:
+            current += 1
+        else:
+            break
+    totals['current_streak'] = current
+
     return totals
 
 
@@ -204,88 +208,161 @@ def total_stars(repos):
     return sum(r.get('stargazers_count', 0) for r in repos if not r.get('fork'))
 
 
-# ---------- SVG generators ----------
-
-def svg_languages(langs, theme, limit=8):
-    total = sum(langs.values())
-    if total == 0:
-        return None
-    top = sorted(langs.items(), key=lambda x: x[1], reverse=True)[:limit]
-    t = THEMES[theme]
-
-    W = 360
-    PAD = 20
-    TITLE_H = 42
-    ROW_H = 28
-    BAR_H = 8
-    BAR_MAX_W = W - PAD * 2 - 60
-    height = PAD + TITLE_H + len(top) * ROW_H + PAD
-    top_bytes = top[0][1]
-
-    lines = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{height}" viewBox="0 0 {W} {height}" role="img" aria-label="Most used languages">',
-        f'  <rect width="{W}" height="{height}" rx="10" fill="{t["bg"]}" stroke="{t["border"]}" stroke-width="1"/>',
-        f'  <text x="{PAD}" y="{PAD + 20}" fill="{t["title"]}" font-size="15" font-weight="600" font-family="{FF}">Most Used Languages</text>',
-        f'  <line x1="{PAD}" y1="{PAD + 28}" x2="{W - PAD}" y2="{PAD + 28}" stroke="{t["border"]}" stroke-width="1"/>',
-    ]
-
-    for i, (lang, count) in enumerate(top):
-        pct = count / total * 100
-        bw = max(4.0, (count / top_bytes) * BAR_MAX_W)
-        clr = COLORS.get(lang, t['muted'])
-        y = PAD + TITLE_H + i * ROW_H
-        lines += [
-            f'  <rect x="{PAD}" y="{y}" width="{BAR_MAX_W:.1f}" height="{BAR_H}" rx="3" fill="{t["track"]}"/>',
-            f'  <rect x="{PAD}" y="{y}" width="{bw:.1f}" height="{BAR_H}" rx="3" fill="{clr}"/>',
-            f'  <text x="{PAD}" y="{y + BAR_H + 13}" fill="{t["text"]}" font-size="12" font-family="{FF}">{lang}</text>',
-            f'  <text x="{W - PAD}" y="{y + BAR_H + 13}" fill="{t["muted"]}" font-size="12" font-family="{FF}" text-anchor="end">{pct:.1f}%</text>',
-        ]
-
-    lines.append('</svg>')
-    return '\n'.join(lines)
+def non_fork_count(repos):
+    return sum(1 for r in repos if not r.get('fork'))
 
 
-def _fmt(n):
-    if n >= 1000:
-        return f'{n/1000:.1f}k'.replace('.0k', 'k')
-    return str(n)
+# ---------- Rendering helpers ----------
+
+def fmt_int(n):
+    return f'{n:,}'
 
 
-def svg_stats(stats, stars, theme):
-    """A clean overview card: header + rows of metrics."""
-    t = THEMES[theme]
+def bar(pct, width=BAR_WIDTH):
+    """Render a percentage as a text bar using █ ▓ ▒ ░ block chars."""
+    total = pct / 100 * width
+    full = int(total)
+    remainder = total - full
+    if remainder >= 0.66:
+        mid = '▓'
+    elif remainder >= 0.33:
+        mid = '▒'
+    else:
+        mid = ''
+    empty = max(0, width - full - (1 if mid else 0))
+    s = '█' * full + mid + '░' * empty
+    # Pad/truncate to exactly `width` chars (unicode blocks are all 1-wide).
+    if len(s) < width:
+        s += '░' * (width - len(s))
+    return s[:width]
+
+
+def humanize_duration(start, end):
+    """Approximate 'X years, Y months' from two datetimes."""
+    months = (end.year - start.year) * 12 + (end.month - start.month)
+    if end.day < start.day:
+        months -= 1
+    years, months = divmod(max(0, months), 12)
+    parts = []
+    if years:
+        parts.append(f'{years} yr' + ('s' if years != 1 else ''))
+    if months:
+        parts.append(f'{months} mo')
+    return ', '.join(parts) or '< 1 mo'
+
+
+def render_block(stats, langs, stars, repo_count):
+    now = datetime.now(timezone.utc)
+    age = humanize_duration(stats['created_at'], now)
+    joined = stats['created_at'].strftime('%b %Y')
+
+    # --- Profile & activity stats ---
     rows = [
-        ('Total Stars Earned',          _fmt(stars),                  '★'),
-        ('Total Commits (all-time)',    _fmt(stats['commits']),       '◆'),
-        ('Total PRs',                   _fmt(stats['prs']),           '⤴'),
-        ('Total PR Reviews',            _fmt(stats['reviews']),       '✓'),
-        ('Total Issues',                _fmt(stats['issues']),        '◉'),
-        ('Contributed to (last yr)',    _fmt(stats['contributed_to']),'❖'),
+        ('Profile', [
+            ('⭐ Total Stars Earned',          fmt_int(stars)),
+            ('👥 Followers',                  fmt_int(stats['followers'])),
+            ('🧭 Following',                  fmt_int(stats['following'])),
+            ('📁 Public Repos (owned)',       fmt_int(repo_count)),
+            ('🎂 GitHub Age',                 f"{joined} ({age})"),
+        ]),
+        ('Contributions (All-Time, incl. private)', [
+            ('🔥 Total Commits',              fmt_int(stats['commits'])),
+            ('🔀 Total PRs',                  fmt_int(stats['prs'])),
+            ('✅ Total PR Reviews',           fmt_int(stats['reviews'])),
+            ('💬 Total Issues',               fmt_int(stats['issues'])),
+            ('📦 Repos Contributed To',       fmt_int(stats['contributed_to'])),
+        ]),
+        (f'Activity ({now.year})', [
+            ('📈 Total Contributions',        fmt_int(stats['contributions_this_year'])),
+            ('🗓️  Active Days',               f"{stats['active_days_this_year']} / {(now.timetuple().tm_yday)}"),
+            ('🔥 Current Streak',             f"{stats['current_streak']} days"),
+            ('⚡ Longest Streak',              f"{stats['longest_streak']} days"),
+        ]),
     ]
 
-    W = 360
-    PAD = 20
-    TITLE_H = 42
-    ROW_H = 28
-    height = PAD + TITLE_H + len(rows) * ROW_H + PAD
+    # Compute label column width. Emojis render ~2 columns wide in most
+    # monospace fonts (including the one GitHub uses); variation selectors
+    # (U+FE0F) are zero-width.
+    def visual_len(s):
+        width = 0
+        for ch in s:
+            o = ord(ch)
+            if o == 0xFE0F:
+                continue
+            if o >= 0x2600:
+                width += 2
+            else:
+                width += 1
+        return width
 
-    lines = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{height}" viewBox="0 0 {W} {height}" role="img" aria-label="GitHub stats">',
-        f'  <rect width="{W}" height="{height}" rx="10" fill="{t["bg"]}" stroke="{t["border"]}" stroke-width="1"/>',
-        f'  <text x="{PAD}" y="{PAD + 20}" fill="{t["title"]}" font-size="15" font-weight="600" font-family="{FF}">{stats["login"]}\'s GitHub Stats</text>',
-        f'  <line x1="{PAD}" y1="{PAD + 28}" x2="{W - PAD}" y2="{PAD + 28}" stroke="{t["border"]}" stroke-width="1"/>',
-    ]
+    max_label = 0
+    for _, section in rows:
+        for label, _ in section:
+            max_label = max(max_label, visual_len(label))
+    max_label += 2  # little breathing room
 
-    for i, (label, value, icon) in enumerate(rows):
-        y = PAD + TITLE_H + i * ROW_H + 14
-        lines += [
-            f'  <text x="{PAD}" y="{y}" fill="{t["accent"]}" font-size="13" font-family="{FF}">{icon}</text>',
-            f'  <text x="{PAD + 22}" y="{y}" fill="{t["text"]}" font-size="12" font-family="{FF}">{label}</text>',
-            f'  <text x="{W - PAD}" y="{y}" fill="{t["title"]}" font-size="13" font-weight="600" font-family="{FF}" text-anchor="end">{value}</text>',
-        ]
+    stats_lines = []
+    for title, items in rows:
+        stats_lines.append(f'{title}')
+        for label, value in items:
+            pad = ' ' * (max_label - visual_len(label))
+            stats_lines.append(f'   {label}{pad}{value}')
+        stats_lines.append('')
 
-    lines.append('</svg>')
-    return '\n'.join(lines)
+    # --- Language breakdown (top 8) ---
+    top = sorted(langs.items(), key=lambda x: x[1], reverse=True)[:8]
+    tail_pct = sum(pct for lang, pct in sorted(langs.items(), key=lambda x: x[1], reverse=True)[8:])
+
+    max_lang = max((len(l) for l, _ in top), default=0)
+    lang_lines = []
+    for lang, pct in top:
+        lang_lines.append(f'   {lang:<{max_lang}}  {pct:5.2f} %  {bar(pct)}')
+    if tail_pct > 0:
+        lang_lines.append(f'   {"Other":<{max_lang}}  {tail_pct:5.2f} %  {bar(tail_pct)}')
+
+    # --- Assemble the block ---
+    updated = now.strftime('%b %d, %Y · %H:%M UTC')
+    block = []
+    block.append('**⚡ Profile Metrics**')
+    block.append('')
+    block.append('```text')
+    block.extend(stats_lines)
+    block.append('```')
+    block.append('')
+    block.append('**💻 Most Used Languages** (per-repo average across all non-fork repos)')
+    block.append('')
+    block.append('```text')
+    block.extend(lang_lines)
+    block.append('```')
+    block.append('')
+    block.append(f'<sub>Last updated: {updated} · Generated from private + public repos.</sub>')
+    return '\n'.join(block)
+
+
+def update_readme(block):
+    with open(README_PATH) as f:
+        content = f.read()
+    pattern = re.compile(
+        re.escape(MARKER_START) + r'.*?' + re.escape(MARKER_END),
+        re.DOTALL,
+    )
+    if not pattern.search(content):
+        print(
+            f'ERROR: markers {MARKER_START} / {MARKER_END} not found in {README_PATH}',
+            file=sys.stderr,
+        )
+        sys.exit(1)
+    new_content = pattern.sub(
+        f'{MARKER_START}\n\n{block}\n\n{MARKER_END}',
+        content,
+    )
+    if new_content == content:
+        print('README.md unchanged')
+        return False
+    with open(README_PATH, 'w') as f:
+        f.write(new_content)
+    print(f'Updated {README_PATH}')
+    return True
 
 
 # ---------- main ----------
@@ -293,35 +370,26 @@ def svg_stats(stats, stars, theme):
 def main():
     print('Fetching owned repos…')
     repos = fetch_owned_repos()
-    print(f'  {len(repos)} repos')
+    non_fork = non_fork_count(repos)
+    print(f'  {len(repos)} total ({non_fork} non-fork)')
 
     print('Fetching per-repo language proportions…')
     langs = fetch_language_proportions(repos)
-    print(f'  {len(langs)} languages across {sum(1 for r in repos if not r.get("fork"))} non-fork repos')
+    print(f'  {len(langs)} languages')
 
     print('Fetching user stats via GraphQL…')
     stats = fetch_user_stats()
     stars = total_stars(repos)
-    print(f'  stars={stars} commits={stats["commits"]} prs={stats["prs"]} issues={stats["issues"]} reviews={stats["reviews"]} contributed_to={stats["contributed_to"]}')
+    print(
+        f'  stars={stars} commits={stats["commits"]} prs={stats["prs"]} '
+        f'reviews={stats["reviews"]} issues={stats["issues"]} '
+        f'contributed_to={stats["contributed_to"]} '
+        f'streak={stats["current_streak"]}/{stats["longest_streak"]} '
+        f'active_days={stats["active_days_this_year"]}'
+    )
 
-    os.makedirs('generated', exist_ok=True)
-
-    # Default filenames are the LIGHT theme (matches the rest of the site);
-    # *-dark.svg variants are picked up by <picture> in the README for dark mode.
-    artifacts = {
-        'generated/languages.svg':       svg_languages(langs, 'light'),
-        'generated/languages-dark.svg':  svg_languages(langs, 'dark'),
-        'generated/stats.svg':           svg_stats(stats, stars, 'light'),
-        'generated/stats-dark.svg':      svg_stats(stats, stars, 'dark'),
-    }
-
-    for path, body in artifacts.items():
-        if body is None:
-            print(f'Skipping {path} — no data', file=sys.stderr)
-            continue
-        with open(path, 'w') as f:
-            f.write(body)
-        print(f'Wrote {path}')
+    block = render_block(stats, langs, stars, non_fork)
+    update_readme(block)
 
 
 if __name__ == '__main__':

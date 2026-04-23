@@ -1,6 +1,7 @@
 # Requires ACCESS_TOKEN secret: GitHub PAT with scopes repo + read:user
-# Fetches language data from all owned repos (including private) and
-# commits generated/languages.svg to this repo.
+# Rewrites the profile README.md between the GH_STATS markers with a
+# text-based stats block (languages + activity metrics), including
+# private-repo contributions via GraphQL.
 
 name: GitHub Stats
 
@@ -20,7 +21,10 @@ jobs:
       - name: Install dependencies
         run: pip3 install requests
 
-      - name: Generate language SVG
+      - name: Clean up legacy SVG artifacts (no-op after first run)
+        run: rm -rf generated/
+
+      - name: Generate stats block
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: python3 .github/scripts/generate_stats.py
@@ -29,6 +33,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add generated/
-          git diff --staged --quiet || git commit -m "chore: update language stats [skip ci]"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: update GitHub stats [skip ci]"
           git push
