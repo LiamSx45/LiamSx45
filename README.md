@@ -23,11 +23,7 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 
 <div align="center">
 
-![Overview](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/overview.svg#gh-dark-mode-only)
-![Overview](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/overview.svg#gh-light-mode-only)
-&nbsp;&nbsp;
-![Languages](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/languages.svg#gh-dark-mode-only)
-![Languages](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/languages.svg#gh-light-mode-only)
+![Metrics](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/metrics.svg)
 
 </div>
 
