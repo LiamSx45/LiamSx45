@@ -15,7 +15,7 @@ All stats include private-repo activity via GraphQL's
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -159,7 +159,9 @@ def fetch_user_stats():
         totals['contributed_to'] = max(totals['contributed_to'], cc['totalRepositoriesWithContributedCommits'])
         year += 1
 
-    # Day-level contribution calendar for this year → active days + streaks.
+    # Day-level calendar: fetch this year for headline stats AND last ~52
+    # weeks (may span 2 calendar years) for the heatmap. contributionsCollection
+    # windows are capped at 1 year so we do two queries.
     start_of_year = datetime(now.year, 1, 1, tzinfo=timezone.utc)
     cal_q = """
     query($from: DateTime!, $to: DateTime!) {
@@ -167,17 +169,23 @@ def fetch_user_stats():
         contributionsCollection(from: $from, to: $to) {
           contributionCalendar {
             totalContributions
-            weeks { contributionDays { date contributionCount } }
+            weeks { contributionDays { date weekday contributionCount } }
           }
         }
       }
     }
     """
-    cal = gql(cal_q, {'from': start_of_year.isoformat(), 'to': now.isoformat()})['viewer']['contributionsCollection']['contributionCalendar']
-    days = [(d['date'], d['contributionCount']) for w in cal['weeks'] for d in w['contributionDays']]
+    this_year_cal = gql(cal_q, {'from': start_of_year.isoformat(), 'to': now.isoformat()})['viewer']['contributionsCollection']['contributionCalendar']
+    days = [(d['date'], d['contributionCount']) for w in this_year_cal['weeks'] for d in w['contributionDays']]
 
-    totals['contributions_this_year'] = cal['totalContributions']
+    totals['contributions_this_year'] = this_year_cal['totalContributions']
     totals['active_days_this_year']   = sum(1 for _, c in days if c > 0)
+
+    # Trailing 52 weeks for the heatmap
+    heatmap_from = now.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(weeks=52)
+    heatmap_cal = gql(cal_q, {'from': heatmap_from.isoformat(), 'to': now.isoformat()})['viewer']['contributionsCollection']['contributionCalendar']
+    totals['heatmap_weeks']            = heatmap_cal['weeks']
+    totals['heatmap_total']            = heatmap_cal['totalContributions']
 
     longest = run = 0
     for _, c in days:
@@ -235,6 +243,40 @@ def bar(pct, width=BAR_WIDTH):
     if len(s) < width:
         s += '░' * (width - len(s))
     return s[:width]
+
+
+def render_heatmap(weeks, total):
+    """7-row × N-column ASCII heatmap of the trailing 52 weeks.
+
+    Each cell is one day, mapped into 4 intensity buckets based on quartiles
+    of the user's own non-zero days (so someone averaging 2 commits/day gets
+    a meaningful spread, not everything crammed into the lowest bucket).
+    """
+    counts = [d['contributionCount'] for w in weeks for d in w['contributionDays']]
+    nonzero = sorted(c for c in counts if c > 0)
+    if nonzero:
+        q1 = nonzero[len(nonzero) // 4]
+        q3 = nonzero[(3 * len(nonzero)) // 4]
+    else:
+        q1 = q3 = 0
+
+    def cell(c):
+        if c == 0:      return '░'  # no contributions
+        if c <= q1:     return '▒'  # bottom 25% of active days
+        if c <= q3:     return '▓'  # middle 50%
+        return '█'                   # top 25%
+
+    # GitHub returns each week as 7 ordered contributionDays starting on Sun.
+    rows = [[], [], [], [], [], [], []]
+    for w in weeks:
+        for d in w['contributionDays']:
+            rows[d['weekday']].append(cell(d['contributionCount']))
+
+    day_labels = ['Sun', '   ', 'Tue', '   ', 'Thu', '   ', 'Sat']
+    lines = [f'   {label}  {"".join(row)}' for label, row in zip(day_labels, rows)]
+    lines.append('')
+    lines.append(f'         Less  ░ ▒ ▓ █  More          {total:,} contributions in the last year')
+    return '\n'.join(lines)
 
 
 def humanize_duration(start, end):
@@ -320,6 +362,9 @@ def render_block(stats, langs, stars, repo_count):
     if tail_pct > 0:
         lang_lines.append(f'   {"Other":<{max_lang}}  {tail_pct:5.2f} %  {bar(tail_pct)}')
 
+    # --- Contribution heatmap (trailing 52 weeks) ---
+    heatmap = render_heatmap(stats['heatmap_weeks'], stats['heatmap_total'])
+
     # --- Assemble the block ---
     updated = now.strftime('%b %d, %Y · %H:%M UTC')
     block = []
@@ -333,6 +378,12 @@ def render_block(stats, langs, stars, repo_count):
     block.append('')
     block.append('```text')
     block.extend(lang_lines)
+    block.append('```')
+    block.append('')
+    block.append('**🗓️ Contribution Heatmap** (last 52 weeks)')
+    block.append('')
+    block.append('```text')
+    block.append(heatmap)
     block.append('```')
     block.append('')
     block.append(f'<sub>Last updated: {updated} · Generated from private + public repos.</sub>')

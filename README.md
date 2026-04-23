@@ -68,16 +68,6 @@ Activity (2026)
 
 ---
 
-## Contribution Graph
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LiamSx45/LiamSx45/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/LiamSx45/LiamSx45/output/github-snake.svg" />
-  <img alt="contribution snake" src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/output/github-snake.svg" />
-</picture>
-
----
-
 ## Tech Stack
 
 **Languages**
