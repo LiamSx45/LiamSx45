@@ -1,103 +1,106 @@
-# Hey there! 👋 <a href="https://www.sawyerliam.com/"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"></a>
+<div align="center">
 
-<img align="right" width="350px" src="https://github.com/LiamSx45/LiamSx45/blob/main/bitmoji%20wave.png?raw=true" alt="Bitmoji waving" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&duration=3000&pause=1000&color=6C9CF7&center=true&vCenter=true&width=620&lines=Hi%2C+I'm+Liam+Sawyer+%F0%9F%91%8B;Creative+Technologist;iOS+%26+Automation+Engineer;I+build+things+that+matter" alt="Typing SVG" />
 
-I’m **Liam Sawyer** — a creative technologist, automation engineer, and iOS tinkerer passionate about building tools that make life smarter and more expressive.
-
-* 👨‍💻 I’m currently exploring **Swift, SwiftUI, and Xcode** to bring my iOS ideas to life.
-* 🤝 Looking to collaborate on personal projects — especially in automation, design, and wellness tech.
-* ✉️ Reach me anytime: **[liam@sawyerliam.com](mailto:liam@sawyerliam.com)**
+</div>
 
 ---
 
-## 📊 Weekly Development Breakdown
+I'm a **creative technologist** who lives at the intersection of iOS development, automation, and design. I care about building tools that feel intentional — smart, expressive, and useful in real life.
 
-<!--START_SECTION:waka-->
+> **Most of my work is in private repos.** Head to [**liamsawyer.com**](https://liamsawyer.com) for a fuller picture — projects, stats, and everything in between.
 
-```txt
-From: 15 April 2026 - To: 22 April 2026
-
-Other         24 hrs 14 mins        ████████████████████████░   95.49 %
-Image (svg)   55 mins               █░░░░░░░░░░░░░░░░░░░░░░░░   03.64 %
-Swift         13 mins               ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.87 %
-```
-
-<!--END_SECTION:waka-->
+- Currently building iOS apps with **Swift & SwiftUI**
+- Deep into automation — from home systems to CI/CD pipelines
+- Interested in the crossover between design, security, and everyday utility
+- ✉️ [liam@sawyerliam.com](mailto:liam@sawyerliam.com)
 
 ---
 
-## 🎙️ Podcast Projects
+## GitHub Stats
 
-### ✨ *Sawyer Talks*
+<sub>Stats are pulled via workflow and include activity from private repositories.</sub>
 
-<!-- SAWYER_TALKS:START -->
-- [Special Edition | PRIDE &#39;21: A Q&amp;A With Friends](https://sawyer-talks.captivate.fm/episode/special-edition-pride-21-a-qa-with-friends)
-- [Let’s Sip: Tea Time on a Monday Night? A Review of White Claw Iced Teas.](https://sawyer-talks.captivate.fm/episode/lets-sip-tea-time-on-a-monday-night-a-review-of-white-claw-iced-teas-)
-<!-- SAWYER_TALKS:END -->
+<div align="center">
 
-### 🧠 *Life in Focus*
+![Overview](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/overview.svg#gh-dark-mode-only)
+![Overview](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/overview.svg#gh-light-mode-only)
+&nbsp;&nbsp;
+![Languages](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/languages.svg#gh-dark-mode-only)
+![Languages](https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/generated/languages.svg#gh-light-mode-only)
 
-<!-- LIFEINFOCUS:START -->
-- [Episode 01: The Stigma of Mental Health with Colette Barron](https://sawyeroriginal.com/lifeinfocus?post=ep01)
-- [Trailer](https://lifeinfocuspod.com/episodes/trailer-full)
-<!-- LIFEINFOCUS:END -->
-
-### 🌱 *Urban Garden Dreams*
-
-<!-- URBANGARDEN:START -->
-- [Trailer](https://urbangardendreams.com/episodes/trailer-full)
-<!-- URBANGARDEN:END -->
+</div>
 
 ---
 
-## 🔗 Let’s Connect
+## Contribution Graph
 
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/sawyerliam/)
-[![Instagram](https://img.shields.io/badge/-Instagram-c27ba0?style=flat-square\&logo=instagram\&logoColor=white)](http://instagram.com/sawyer.liam/)
-[![Snapchat](https://img.shields.io/badge/-Snapchat-yellow?style=flat-square\&logo=snapchat\&logoColor=white)](https://www.snapchat.com/add/sawyer.liam)
-[![Spark AR](https://img.shields.io/badge/-Spark_AR-60d1cc?style=flat-square\&logo=sparkar\&logoColor=white)](https://www.facebook.com/sparkarhub/portfolios/ig/sawyer.original/)
-
----
-
-## 💼 My Website
-
-### 🌐 [SawyerOriginal.com →](https://sawyeroriginal.com)
-
-![Dark Mode Logo](https://github.com/LiamSx45/LiamSx45/blob/main/Sawyer%20Studios%20Logo%20dark.png?raw=true#gh-dark-mode-only)
-![Light Mode Logo](https://github.com/LiamSx45/LiamSx45/blob/main/Sawyer%20Studios%20Logo%20Light.png?raw=true#gh-light-mode-only)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LiamSx45/LiamSx45/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/LiamSx45/LiamSx45/output/github-snake.svg" />
+  <img alt="contribution snake" src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/output/github-snake.svg" />
+</picture>
 
 ---
 
-## 🏆 Badges
+## Tech Stack
 
-[<img src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/Badges/google-it-support-certificate.png" width="120"/>](https://www.credly.com/badges/019b830d-0446-4d35-8ebd-8932eab213e4/public_url)
-[<img src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/Badges/cyber-threat-intelligence.png" width="120"/>](https://www.credly.com/badges/2142a988-5e7d-4973-bcf9-64439ddf6df2/public_url)
+**Languages**
+
+![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+
+**Mobile & Frontend**
+
+![SwiftUI](https://img.shields.io/badge/SwiftUI-0066CC?style=flat-square&logo=swift&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
+**Tools & Platforms**
+
+![Xcode](https://img.shields.io/badge/Xcode-1575F9?style=flat-square&logo=xcode&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
+![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google%20Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+
+**Systems & DevOps**
+
+![macOS](https://img.shields.io/badge/macOS-000000?style=flat-square&logo=apple&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-000000?style=flat-square&logo=apple&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white)
+![Proxmox](https://img.shields.io/badge/Proxmox-E57000?style=flat-square&logo=proxmox&logoColor=white)
+![Kali Linux](https://img.shields.io/badge/Kali%20Linux-557C94?style=flat-square&logo=kalilinux&logoColor=white)
 
 ---
 
-## 💻 Tech Stack & Tools
+## Certifications
 
-*Too many to name, but here are some highlights:*
-
-* Operating Systems: Ubuntu • macOS • iOS • Kali Linux • Windows 10
-* Design: Figma • Photoshop • Illustrator • InDesign • XD • Canva
-* Frontend: Swift • React • HTML5/CSS3
-* Backend: Python • JavaScript • C++ • Java • Kotlin • Ruby
-* Mobile: Flutter • SwiftUI • Android Studio • Xcode
-* DevOps/Tools: GitHub Actions • Firebase • Docker • AWS • Webmin • Proxmox
-* Other: Spark AR • Homebridge • Kace • Stripe • Google Cloud
-
-*👉 [Full skill table below](#my-skills-)*
+[<img src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/Badges/google-it-support-certificate.png" width="100" alt="Google IT Support Certificate"/>](https://www.credly.com/badges/019b830d-0446-4d35-8ebd-8932eab213e4/public_url)
+&nbsp;
+[<img src="https://raw.githubusercontent.com/LiamSx45/LiamSx45/main/Badges/cyber-threat-intelligence.png" width="100" alt="Cyber Threat Intelligence"/>](https://www.credly.com/badges/2142a988-5e7d-4973-bcf9-64439ddf6df2/public_url)
 
 ---
 
-## 📈 GitHub Stats
+## Connect
 
-![Liam's GitHub stats](https://github-readme-stats.vercel.app/api?username=LiamSx45\&show_icons=true\&theme=tokyonight\&hide_border=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LiamSx45\&layout=compact\&theme=tokyonight\&hide_border=true)
+[![Website](https://img.shields.io/badge/liamsawyer.com-000000?style=flat-square&logo=safari&logoColor=white)](https://liamsawyer.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sawyerliam/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white)](http://instagram.com/sawyer.liam/)
 
 ---
 
-## 🌐 Contributors (via Repography)
-
-[![Top contributors](https://images.repography.com/26932345/LiamSx45/LiamSx45/top-contributors/5557e06dd23fd806e83608a33ae14c40_table.svg)](https://github.com/LiamSx45/LiamSx45/graphs/contributors)
+<div align="center">
+<sub>Most of my commits are in private repos — <a href="https://liamsawyer.com">liamsawyer.com</a> tells the full story.</sub>
+</div>

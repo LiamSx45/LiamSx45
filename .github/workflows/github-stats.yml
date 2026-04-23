@@ -1,0 +1,22 @@
+# Requires a repo secret named ACCESS_TOKEN:
+#   GitHub PAT with scopes: repo, read:user
+# This generates generated/overview.svg and generated/languages.svg
+# that include data from your private repositories.
+
+name: GitHub Stats
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jstrieb/github-stats@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INCLUDE_FORKED_REPOS: "false"
+          ONLY_PRIVATE: "false"
