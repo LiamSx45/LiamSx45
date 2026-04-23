@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="250" viewBox="0 0 360 250" role="img" aria-label="GitHub stats">
+  <rect width="360" height="250" rx="10" fill="#ffffff" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="40" fill="#1f2328" font-size="15" font-weight="600" font-family="'Segoe UI',Ubuntu,sans-serif">LiamSx45's GitHub Stats</text>
+  <line x1="20" y1="48" x2="340" y2="48" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="76" fill="#0969da" font-size="13" font-family="'Segoe UI',Ubuntu,sans-serif">★</text>
+  <text x="42" y="76" fill="#1f2328" font-size="12" font-family="'Segoe UI',Ubuntu,sans-serif">Total Stars Earned</text>
+  <text x="340" y="76" fill="#1f2328" font-size="13" font-weight="600" font-family="'Segoe UI',Ubuntu,sans-serif" text-anchor="end">5</text>
+  <text x="20" y="104" fill="#0969da" font-size="13" font-family="'Segoe UI',Ubuntu,sans-serif">◆</text>
+  <text x="42" y="104" fill="#1f2328" font-size="12" font-family="'Segoe UI',Ubuntu,sans-serif">Total Commits (all-time)</text>
+  <text x="340" y="104" fill="#1f2328" font-size="13" font-weight="600" font-family="'Segoe UI',Ubuntu,sans-serif" text-anchor="end">986</text>
+  <text x="20" y="132" fill="#0969da" font-size="13" font-family="'Segoe UI',Ubuntu,sans-serif">⤴</text>
+  <text x="42" y="132" fill="#1f2328" font-size="12" font-family="'Segoe UI',Ubuntu,sans-serif">Total PRs</text>
+  <text x="340" y="132" fill="#1f2328" font-size="13" font-weight="600" font-family="'Segoe UI',Ubuntu,sans-serif" text-anchor="end">0</text>
+  <text x="20" y="160" fill="#0969da" font-size="13" font-family="'Segoe UI',Ubuntu,sans-serif">✓</text>
+  <text x="42" y="160" fill="#1f2328" font-size="12" font-family="'Segoe UI',Ubuntu,sans-serif">Total PR Reviews</text>
+  <text x="340" y="160" fill="#1f2328" font-size="13" font-weight="600" font-family="'Segoe UI',Ubuntu,sans-serif" text-anchor="end">0</text>
+  <text x="20" y="188" fill="#0969da" font-size="13" font-family="'Segoe UI',Ubuntu,sans-serif">◉</text>
+  <text x="42" y="188" fill="#1f2328" font-size="12" font-family="'Segoe UI',Ubuntu,sans-serif">Total Issues</text>
+  <text x="340" y="188" fill="#1f2328" font-size="13" font-weight="600" font-family="'Segoe UI',Ubuntu,sans-serif" text-anchor="end">10</text>
+  <text x="20" y="216" fill="#0969da" font-size="13" font-family="'Segoe UI',Ubuntu,sans-serif">❖</text>
+  <text x="42" y="216" fill="#1f2328" font-size="12" font-family="'Segoe UI',Ubuntu,sans-serif">Contributed to (last yr)</text>
+  <text x="340" y="216" fill="#1f2328" font-size="13" font-weight="600" font-family="'Segoe UI',Ubuntu,sans-serif" text-anchor="end">19</text>
+</svg>
