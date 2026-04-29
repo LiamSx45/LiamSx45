@@ -36,7 +36,7 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **📊 Contributions** <sub>(all-time, includes private repos)</sub>
 
 ```text
-   🔥 Total Commits         1,049
+   🔥 Total Commits         1,057
    🔀 Total PRs             0
    ✅ Total PR Reviews      0
    💬 Total Issues          10
@@ -46,21 +46,21 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **📈 Activity (2026)**
 
 ```text
-   📈 Total Contributions   383
-   🗓️  Active Days          27 / 118
-   🔥 Current Streak        23 days
-   ⚡ Longest Streak        23 days
+   📈 Total Contributions   391
+   🗓️  Active Days          28 / 119
+   🔥 Current Streak        24 days
+   ⚡ Longest Streak        24 days
 ```
 
 **💻 Most Used Languages** <sub>per-repo average across all non-fork repos</sub>
 
 ```text
-   Swift       35.21 %  ████████▓░░░░░░░░░░░░░░░░
+   Swift       35.66 %  ████████▓░░░░░░░░░░░░░░░░
    TypeScript  28.52 %  ███████░░░░░░░░░░░░░░░░░░
    HTML         6.52 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
    JavaScript   5.55 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
-   Python       3.90 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
    PHP          3.65 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
+   Python       3.45 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
    CSS          3.23 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
    C            2.18 %  ▒░░░░░░░░░░░░░░░░░░░░░░░░
    Other       11.24 %  ██▓░░░░░░░░░░░░░░░░░░░░░░
@@ -71,18 +71,19 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 ```text
    █  botanicbase-n8n-backup   —            · 2h ago   🔒 private
          └ n8n workflow backups for BotanicBase automations — exported workflow and back…
-   █  stridify                 Swift        · 8h ago   🔒 private
+   █  botanicbase2026          Swift        · 10h ago  🔒 private
+         └ BotanicBase iOS app (2026) — plant care companion built with Swift
+   █  BusyBar                  Swift        · 11h ago  🔒 private
+         └ BusyBar — macOS menu bar app with LED patterns and status indicators, built w…
+   █  stridify                 Swift        · 14h ago  🔒 private
          └ Turn workouts into shareable posts with stats, maps, and achievements.
-   █  botanicbase-web-main     TypeScript   · 14h ago  🔒 private
+   ▓  botanicbase-web-main     TypeScript   · 1d ago   🔒 private
          └ Website for the BotanicBase iOS app — built with Next.js and TypeScript
-   ▓  photos-web               TypeScript   · 1d ago   🔒 private
-         └ Personal photo library on Next.js + Cloudflare R2/D1/Image Transformations
-   ▓  FuelLoop                 —            · 1d ago   🔒 private
 
       █  last 24h     ▓  this week     ▒  this month     ░  older
 ```
 
-<sub>Last updated: Apr 28, 2026 · 06:49 UTC · Generated from private + public repos.</sub>
+<sub>Last updated: Apr 29, 2026 · 06:44 UTC · Generated from private + public repos.</sub>
 
 <!-- GH_STATS:END -->
 
