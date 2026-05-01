@@ -36,7 +36,7 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **📊 Contributions** <sub>(all-time, includes private repos)</sub>
 
 ```text
-   🔥 Total Commits         1,067
+   🔥 Total Commits         1,073
    🔀 Total PRs             0
    ✅ Total PR Reviews      0
    💬 Total Issues          10
@@ -46,10 +46,10 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **📈 Activity (2026)**
 
 ```text
-   📈 Total Contributions   402
-   🗓️  Active Days          29 / 120
-   🔥 Current Streak        25 days
-   ⚡ Longest Streak        25 days
+   📈 Total Contributions   408
+   🗓️  Active Days          30 / 121
+   🔥 Current Streak        26 days
+   ⚡ Longest Streak        26 days
 ```
 
 **💻 Most Used Languages** <sub>per-repo average across all non-fork repos</sub>
@@ -71,18 +71,18 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 ```text
    █  botanicbase-n8n-backup   —            · 2h ago   🔒 private
          └ n8n workflow backups for BotanicBase automations — exported workflow and back…
-   █  stridify                 Swift        · 10h ago  🔒 private
-         └ Turn workouts into shareable posts with stats, maps, and achievements.
-   █  botanicbase2026          Swift        · 11h ago  🔒 private
+   █  botanicbase2026          Swift        · 10h ago  🔒 private
          └ BotanicBase iOS app (2026) — plant care companion built with Swift
-   █  poke-ebay-web-admin      TypeScript   · 15h ago
-   ▓  BusyBar                  Swift        · 1d ago   🔒 private
+   ▓  stridify                 Swift        · 1d ago   🔒 private
+         └ Turn workouts into shareable posts with stats, maps, and achievements.
+   ▓  poke-ebay-web-admin      TypeScript   · 1d ago 
+   ▓  BusyBar                  Swift        · 2d ago   🔒 private
          └ BusyBar — macOS menu bar app with LED patterns and status indicators, built w…
 
       █  last 24h     ▓  this week     ▒  this month     ░  older
 ```
 
-<sub>Last updated: Apr 30, 2026 · 06:46 UTC · Generated from private + public repos.</sub>
+<sub>Last updated: May 01, 2026 · 06:49 UTC · Generated from private + public repos.</sub>
 
 <!-- GH_STATS:END -->
 
