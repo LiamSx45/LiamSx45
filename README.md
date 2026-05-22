@@ -29,61 +29,59 @@ I'm a **creative technologist** who lives at the intersection of iOS development
    ⭐ Total Stars Earned    5
    👥 Followers             5
    🧭 Following             4
-   📁 Public Repos (owned)  77
+   📁 Public Repos (owned)  79
    🎂 GitHub Age            Jun 2018 (7 yrs, 11 mo)
 ```
 
 **📊 Contributions** <sub>(all-time, includes private repos)</sub>
 
 ```text
-   🔥 Total Commits         1,172
+   🔥 Total Commits         1,180
    🔀 Total PRs             0
    ✅ Total PR Reviews      0
    💬 Total Issues          10
-   📦 Repos Contributed To  27
+   📦 Repos Contributed To  29
 ```
 
 **📈 Activity (2026)**
 
 ```text
-   📈 Total Contributions   512
-   🗓️  Active Days          50 / 141
-   🔥 Current Streak        46 days
-   ⚡ Longest Streak        46 days
+   📈 Total Contributions   522
+   🗓️  Active Days          51 / 142
+   🔥 Current Streak        47 days
+   ⚡ Longest Streak        47 days
 ```
 
 **💻 Most Used Languages** <sub>per-repo average across all non-fork repos</sub>
 
 ```text
-   TypeScript  33.48 %  ████████▒░░░░░░░░░░░░░░░░
-   Swift       32.42 %  ████████░░░░░░░░░░░░░░░░░
-   HTML         5.96 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
-   JavaScript   5.64 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
-   CSS          3.86 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
-   PHP          3.32 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
-   Python       3.14 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
-   C            1.98 %  ▒░░░░░░░░░░░░░░░░░░░░░░░░
-   Other       10.22 %  ██▒░░░░░░░░░░░░░░░░░░░░░░
+   Swift       34.40 %  ████████▒░░░░░░░░░░░░░░░░
+   TypeScript  32.49 %  ████████░░░░░░░░░░░░░░░░░
+   HTML         5.78 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
+   JavaScript   5.47 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
+   CSS          3.74 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
+   PHP          3.22 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
+   Python       3.05 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
+   C            1.92 %  ▒░░░░░░░░░░░░░░░░░░░░░░░░
+   Other        9.92 %  ██▒░░░░░░░░░░░░░░░░░░░░░░
 ```
 
 **🛠️ Currently Building** <sub>5 most recent pushes, private included</sub>
 
 ```text
-   █  botanicbase-n8n-backup      —            · 3h ago  🔒 private
+   █  botanicbase-n8n-backup      —            · 3h ago   🔒 private
          └ n8n workflow backups for BotanicBase automations — exported workflow and back…
-   ▓  dv-global-highlights-reel   TypeScript   · 1d ago  🔒 private
+   █  YodeckSlides                Swift        · 11h ago  🔒 private
+   █  SlideshowGenerator          Swift        · 16h ago  🔒 private
+   ▓  dv-global-highlights-reel   TypeScript   · 2d ago   🔒 private
          └ DoubleVerify global all-hands highlights reel and slideshow studio
-   ▓  melodyshare-website         TypeScript   · 6d ago  🔒 private
+   ▒  melodyshare-website         TypeScript   · 1w ago   🔒 private
          └ MelodyShare website
-   ▒  sawyer-original-website     TypeScript   · 1w ago  🔒 private
-         └ Personal portfolio website — built with Next.js, TypeScript, and Tailwind CSS
-   ▒  route-map-cli               TypeScript   · 1w ago
-         └ Map application routes from common JavaScript and TypeScript web projects.
 
       █  last 24h     ▓  this week     ▒  this month     ░  older
 ```
 
-<sub>Last updated: May 21, 2026 · 07:10 UTC · Generated from private + public repos.</sub>
+<sub>Last updated: May 22, 2026 · 07:05 UTC · Generated from private + public repos.</sub>
 
 <!-- GH_STATS:END -->
 
