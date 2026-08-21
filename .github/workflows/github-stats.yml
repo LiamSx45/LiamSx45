@@ -1,7 +1,10 @@
-# Requires ACCESS_TOKEN secret: GitHub PAT with scopes repo + read:user
-# Rewrites the profile README.md between the GH_STATS markers with a
-# text-based stats block (languages + activity metrics), including
-# private-repo contributions via GraphQL.
+# Stats are generated with GITHUB_TOKEN by default (contribution totals include
+# private activity when "Include private contributions on my profile" is on).
+#
+# Optional ACCESS_TOKEN secret: a user PAT (classic: repo + read:user, or
+# fine-grained: Contents read on the repos you want included). When valid, the
+# language breakdown and "Currently Building" list include private repos.
+# An expired ACCESS_TOKEN is ignored; the job falls back to GITHUB_TOKEN.
 
 name: GitHub Stats
 
@@ -9,6 +12,15 @@ on:
   schedule:
     - cron: "0 6 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/scripts/generate_stats.py"
+      - ".github/workflows/github-stats.yml"
+
+concurrency:
+  group: github-stats
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -16,17 +28,16 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: pip3 install requests
 
-      - name: Clean up legacy SVG artifacts (no-op after first run)
-        run: rm -rf generated/
-
       - name: Generate stats block
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: python3 .github/scripts/generate_stats.py
 
       - name: Commit and push

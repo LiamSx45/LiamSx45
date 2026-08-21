@@ -9,34 +9,146 @@ Text rendering was chosen over SVG so the block:
   - is copy-pasteable and information-dense
   - doesn't depend on raw.githubusercontent.com caching
 
-All stats include private-repo activity via GraphQL's
-`restrictedContributionsCount` and per-repo language proportions.
+Auth strategy
+-------------
+Prefer a user PAT in ACCESS_TOKEN (scopes: repo + read:user) so language
+breakdown and "Currently Building" include private repos. If that secret is
+missing or rejected (expired PAT → 401), fall back to GITHUB_TOKEN and query
+`user(login:)` instead of `viewer`.
+
+With GITHUB_TOKEN, contribution totals still include private activity when the
+profile has "Include private contributions on my profile" enabled
+(`restrictedContributionsCount` on the public calendar). Private repo names
+and private-only languages are omitted in that mode.
 """
 import os
 import re
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 import requests
-
-TOKEN = os.environ['ACCESS_TOKEN']
-HEADERS = {
-    'Authorization': f'Bearer {TOKEN}',
-    'Accept': 'application/vnd.github.v3+json',
-}
-GQL_URL = 'https://api.github.com/graphql'
 
 README_PATH = 'README.md'
 MARKER_START = '<!-- GH_STATS:START -->'
 MARKER_END = '<!-- GH_STATS:END -->'
 
 BAR_WIDTH = 25
+GQL_URL = 'https://api.github.com/graphql'
+
+# Populated by resolve_auth() before any API calls.
+HEADERS = {}
+AUTH_MODE = 'public'       # 'private' when ACCESS_TOKEN authenticates as the profile user
+PROFILE_LOGIN = None       # login whose stats we render
+
+
+# ---------- Auth ----------
+
+def _headers(token):
+    return {
+        'Authorization': f'Bearer {token}',
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+    }
+
+
+def _probe_login(token):
+    """Return the authenticated login for `token`, or None if it is unusable."""
+    if not token or not token.strip():
+        return None
+    r = requests.get('https://api.github.com/user', headers=_headers(token), timeout=30)
+    if r.status_code == 401:
+        return None
+    if r.status_code != 200:
+        # Installation tokens (GITHUB_TOKEN) often cannot hit /user (403).
+        # Treat non-401 as "token works for API calls" with unknown login.
+        if r.status_code == 403:
+            return ''
+        print(f'Token probe HTTP {r.status_code}: {r.text}', file=sys.stderr)
+        return None
+    return r.json().get('login') or ''
+
+
+def resolve_auth():
+    """Pick ACCESS_TOKEN when valid; otherwise GITHUB_TOKEN.
+
+    Sets module-level HEADERS, AUTH_MODE, and PROFILE_LOGIN.
+    """
+    global HEADERS, AUTH_MODE, PROFILE_LOGIN
+
+    owner = (
+        os.environ.get('GITHUB_REPOSITORY_OWNER')
+        or os.environ.get('STATS_LOGIN')
+        or ''
+    )
+    if not owner and os.environ.get('GITHUB_REPOSITORY'):
+        owner = os.environ['GITHUB_REPOSITORY'].split('/')[0]
+    if not owner:
+        owner = 'LiamSx45'
+
+    access = os.environ.get('ACCESS_TOKEN', '').strip()
+    github = os.environ.get('GITHUB_TOKEN', '').strip()
+
+    access_login = _probe_login(access) if access else None
+    if access and access_login is None:
+        print(
+            'WARNING: ACCESS_TOKEN is present but rejected (likely expired or revoked). '
+            'Falling back to GITHUB_TOKEN. Refresh the ACCESS_TOKEN secret '
+            '(classic PAT with repo + read:user, or a fine-grained PAT with '
+            'Contents: Read on all repos you want included) to restore private '
+            'repo languages and the Currently Building list.',
+            file=sys.stderr,
+        )
+
+    if access_login is not None and access_login != '':
+        # User PAT — full private visibility when it belongs to the profile owner.
+        HEADERS = _headers(access)
+        PROFILE_LOGIN = access_login
+        AUTH_MODE = 'private' if access_login.lower() == owner.lower() else 'public'
+        if AUTH_MODE != 'private':
+            print(
+                f'WARNING: ACCESS_TOKEN authenticates as {access_login}, not {owner}. '
+                'Private repos for the profile owner will not be included.',
+                file=sys.stderr,
+            )
+        print(f'Auth: ACCESS_TOKEN as {access_login} (mode={AUTH_MODE})')
+        return
+
+    if access and access_login == '':
+        # Token accepted by API but /user is forbidden — unusual for a PAT.
+        HEADERS = _headers(access)
+        PROFILE_LOGIN = owner
+        AUTH_MODE = 'public'
+        print(f'Auth: ACCESS_TOKEN (no /user login); targeting {owner} (mode=public)')
+        return
+
+    if not github:
+        print(
+            'ERROR: No usable token. Set ACCESS_TOKEN (preferred) or GITHUB_TOKEN.',
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    github_login = _probe_login(github)
+    if github_login is None:
+        print('ERROR: GITHUB_TOKEN was rejected by the API.', file=sys.stderr)
+        sys.exit(1)
+
+    HEADERS = _headers(github)
+    PROFILE_LOGIN = owner
+    AUTH_MODE = 'public'
+    who = github_login or 'installation'
+    print(f'Auth: GITHUB_TOKEN as {who}; targeting {owner} (mode=public)')
 
 
 # ---------- API helpers ----------
 
 def gql(query, variables=None):
-    r = requests.post(GQL_URL, headers=HEADERS, json={'query': query, 'variables': variables or {}})
+    r = requests.post(
+        GQL_URL,
+        headers=HEADERS,
+        json={'query': query, 'variables': variables or {}},
+        timeout=60,
+    )
     if r.status_code != 200:
         print(f'GraphQL HTTP {r.status_code}: {r.text}', file=sys.stderr)
         sys.exit(1)
@@ -48,14 +160,23 @@ def gql(query, variables=None):
 
 
 def fetch_owned_repos():
+    """Owned repos visible with the current token.
+
+    Private mode uses /user/repos (includes private). Public mode uses
+    /users/{login}/repos (public only).
+    """
     repos = []
     page = 1
+    if AUTH_MODE == 'private':
+        url = 'https://api.github.com/user/repos'
+        params_base = {'per_page': 100, 'type': 'owner', 'sort': 'pushed'}
+    else:
+        url = f'https://api.github.com/users/{PROFILE_LOGIN}/repos'
+        params_base = {'per_page': 100, 'type': 'owner', 'sort': 'pushed'}
+
     while True:
-        r = requests.get(
-            'https://api.github.com/user/repos',
-            headers=HEADERS,
-            params={'per_page': 100, 'page': page, 'type': 'owner'},
-        )
+        params = {**params_base, 'page': page}
+        r = requests.get(url, headers=HEADERS, params=params, timeout=60)
         if r.status_code != 200:
             print(f'Error {r.status_code}: {r.text}', file=sys.stderr)
             sys.exit(1)
@@ -83,7 +204,7 @@ def fetch_language_proportions(repos):
     for repo in repos:
         if repo.get('fork'):
             continue
-        lr = requests.get(repo['languages_url'], headers=HEADERS)
+        lr = requests.get(repo['languages_url'], headers=HEADERS, timeout=60)
         if lr.status_code != 200:
             continue
         rep_langs = lr.json()
@@ -100,17 +221,34 @@ def fetch_language_proportions(repos):
 
 def fetch_user_stats():
     """All-time totals + this-year activity metrics via GraphQL."""
-    user_q = """
-    query {
-      viewer {
-        login
-        createdAt
-        followers { totalCount }
-        following { totalCount }
-      }
-    }
-    """
-    viewer = gql(user_q)['viewer']
+    if AUTH_MODE == 'private':
+        user_q = """
+        query {
+          viewer {
+            login
+            createdAt
+            followers { totalCount }
+            following { totalCount }
+          }
+        }
+        """
+        viewer = gql(user_q)['viewer']
+    else:
+        user_q = """
+        query($login: String!) {
+          user(login: $login) {
+            login
+            createdAt
+            followers { totalCount }
+            following { totalCount }
+          }
+        }
+        """
+        viewer = gql(user_q, {'login': PROFILE_LOGIN})['user']
+        if viewer is None:
+            print(f'ERROR: GitHub user {PROFILE_LOGIN!r} not found.', file=sys.stderr)
+            sys.exit(1)
+
     login = viewer['login']
     created = datetime.fromisoformat(viewer['createdAt'].replace('Z', '+00:00'))
     now = datetime.now(timezone.utc)
@@ -137,21 +275,42 @@ def fetch_user_stats():
         if end > now:
             end = now
 
-        q = """
-        query($from: DateTime!, $to: DateTime!) {
-          viewer {
-            contributionsCollection(from: $from, to: $to) {
-              totalCommitContributions
-              restrictedContributionsCount
-              totalPullRequestContributions
-              totalIssueContributions
-              totalPullRequestReviewContributions
-              totalRepositoriesWithContributedCommits
+        if AUTH_MODE == 'private':
+            q = """
+            query($from: DateTime!, $to: DateTime!) {
+              viewer {
+                contributionsCollection(from: $from, to: $to) {
+                  totalCommitContributions
+                  restrictedContributionsCount
+                  totalPullRequestContributions
+                  totalIssueContributions
+                  totalPullRequestReviewContributions
+                  totalRepositoriesWithContributedCommits
+                }
+              }
             }
-          }
-        }
-        """
-        cc = gql(q, {'from': start.isoformat(), 'to': end.isoformat()})['viewer']['contributionsCollection']
+            """
+            cc = gql(q, {'from': start.isoformat(), 'to': end.isoformat()})['viewer']['contributionsCollection']
+        else:
+            q = """
+            query($login: String!, $from: DateTime!, $to: DateTime!) {
+              user(login: $login) {
+                contributionsCollection(from: $from, to: $to) {
+                  totalCommitContributions
+                  restrictedContributionsCount
+                  totalPullRequestContributions
+                  totalIssueContributions
+                  totalPullRequestReviewContributions
+                  totalRepositoriesWithContributedCommits
+                }
+              }
+            }
+            """
+            cc = gql(
+                q,
+                {'login': login, 'from': start.isoformat(), 'to': end.isoformat()},
+            )['user']['contributionsCollection']
+
         totals['commits'] += cc['totalCommitContributions'] + cc['restrictedContributionsCount']
         totals['prs']     += cc['totalPullRequestContributions']
         totals['issues']  += cc['totalIssueContributions']
@@ -161,19 +320,38 @@ def fetch_user_stats():
 
     # Day-level calendar for this year — powers active-days count and both streaks.
     start_of_year = datetime(now.year, 1, 1, tzinfo=timezone.utc)
-    cal_q = """
-    query($from: DateTime!, $to: DateTime!) {
-      viewer {
-        contributionsCollection(from: $from, to: $to) {
-          contributionCalendar {
-            totalContributions
-            weeks { contributionDays { date contributionCount } }
+    if AUTH_MODE == 'private':
+        cal_q = """
+        query($from: DateTime!, $to: DateTime!) {
+          viewer {
+            contributionsCollection(from: $from, to: $to) {
+              contributionCalendar {
+                totalContributions
+                weeks { contributionDays { date contributionCount } }
+              }
+            }
           }
         }
-      }
-    }
-    """
-    this_year_cal = gql(cal_q, {'from': start_of_year.isoformat(), 'to': now.isoformat()})['viewer']['contributionsCollection']['contributionCalendar']
+        """
+        this_year_cal = gql(cal_q, {'from': start_of_year.isoformat(), 'to': now.isoformat()})['viewer']['contributionsCollection']['contributionCalendar']
+    else:
+        cal_q = """
+        query($login: String!, $from: DateTime!, $to: DateTime!) {
+          user(login: $login) {
+            contributionsCollection(from: $from, to: $to) {
+              contributionCalendar {
+                totalContributions
+                weeks { contributionDays { date contributionCount } }
+              }
+            }
+          }
+        }
+        """
+        this_year_cal = gql(
+            cal_q,
+            {'login': login, 'from': start_of_year.isoformat(), 'to': now.isoformat()},
+        )['user']['contributionsCollection']['contributionCalendar']
+
     days = [(d['date'], d['contributionCount']) for w in this_year_cal['weeks'] for d in w['contributionDays']]
 
     totals['contributions_this_year'] = this_year_cal['totalContributions']
@@ -205,35 +383,62 @@ def fetch_user_stats():
 
 
 def fetch_recent_repos(limit, exclude_name_with_owner):
-    """Most-recently-pushed repos the viewer owns, public + private.
+    """Most-recently-pushed repos the profile owns.
 
-    Excludes forks, archived repos, and the viewer's profile README repo
-    (`login/login`) so the generator's own automated commits never push
-    this profile to the top of its own list.
+    Private mode: GraphQL viewer repositories (public + private).
+    Public mode: GraphQL user repositories (public only).
+    Excludes forks, archived repos, and the profile README repo.
     """
-    query = """
-    query {
-      viewer {
-        repositories(
-          first: 30,
-          ownerAffiliations: OWNER,
-          orderBy: {field: PUSHED_AT, direction: DESC}
-        ) {
-          nodes {
-            name
-            nameWithOwner
-            description
-            isPrivate
-            isFork
-            isArchived
-            pushedAt
-            primaryLanguage { name }
+    if AUTH_MODE == 'private':
+        query = """
+        query {
+          viewer {
+            repositories(
+              first: 30,
+              ownerAffiliations: OWNER,
+              orderBy: {field: PUSHED_AT, direction: DESC}
+            ) {
+              nodes {
+                name
+                nameWithOwner
+                description
+                isPrivate
+                isFork
+                isArchived
+                pushedAt
+                primaryLanguage { name }
+              }
+            }
           }
         }
-      }
-    }
-    """
-    nodes = gql(query)['viewer']['repositories']['nodes']
+        """
+        nodes = gql(query)['viewer']['repositories']['nodes']
+    else:
+        query = """
+        query($login: String!) {
+          user(login: $login) {
+            repositories(
+              first: 30,
+              ownerAffiliations: OWNER,
+              orderBy: {field: PUSHED_AT, direction: DESC},
+              privacy: PUBLIC
+            ) {
+              nodes {
+                name
+                nameWithOwner
+                description
+                isPrivate
+                isFork
+                isArchived
+                pushedAt
+                primaryLanguage { name }
+              }
+            }
+          }
+        }
+        """
+        nodes = gql(query, {'login': PROFILE_LOGIN})['user']['repositories']['nodes']
+
     out = []
     for n in nodes:
         if n['isFork'] or n['isArchived']:
@@ -252,6 +457,10 @@ def total_stars(repos):
 
 def non_fork_count(repos):
     return sum(1 for r in repos if not r.get('fork'))
+
+
+def public_non_fork_count(repos):
+    return sum(1 for r in repos if not r.get('fork') and not r.get('private'))
 
 
 # ---------- Rendering helpers ----------
@@ -355,7 +564,7 @@ def humanize_duration(start, end):
     return ', '.join(parts) or '< 1 mo'
 
 
-def render_block(stats, langs, stars, repo_count, recent_repos):
+def render_block(stats, langs, stars, public_repo_count, recent_repos):
     now = datetime.now(timezone.utc)
     age = humanize_duration(stats['created_at'], now)
     joined = stats['created_at'].strftime('%b %Y')
@@ -366,7 +575,7 @@ def render_block(stats, langs, stars, repo_count, recent_repos):
             ('⭐ Total Stars Earned',          fmt_int(stars)),
             ('👥 Followers',                  fmt_int(stats['followers'])),
             ('🧭 Following',                  fmt_int(stats['following'])),
-            ('📁 Public Repos (owned)',       fmt_int(repo_count)),
+            ('📁 Public Repos (owned)',       fmt_int(public_repo_count)),
             ('🎂 GitHub Age',                 f"{joined} ({age})"),
         ]),
         ('📊 Contributions', '(all-time, includes private repos)', [
@@ -429,6 +638,18 @@ def render_block(stats, langs, stars, repo_count, recent_repos):
 
     # --- Assemble the block ---
     updated = now.strftime('%b %d, %Y · %H:%M UTC')
+    if AUTH_MODE == 'private':
+        source_note = 'Generated from private + public repos.'
+        lang_sub = 'per-repo average across all non-fork repos'
+        building_sub = '5 most recent pushes, private included'
+    else:
+        source_note = (
+            'Generated via GITHUB_TOKEN (public repos + profile contribution graph). '
+            'Refresh ACCESS_TOKEN to include private repo names/languages.'
+        )
+        lang_sub = 'per-repo average across public non-fork repos'
+        building_sub = '5 most recent public pushes'
+
     block = []
     for heading, subtitle, items in sections:
         suffix = f' <sub>{subtitle}</sub>' if subtitle else ''
@@ -439,22 +660,22 @@ def render_block(stats, langs, stars, repo_count, recent_repos):
         block.append('```')
         block.append('')
 
-    block.append('**💻 Most Used Languages** <sub>per-repo average across all non-fork repos</sub>')
+    block.append(f'**💻 Most Used Languages** <sub>{lang_sub}</sub>')
     block.append('')
     block.append('```text')
-    block.extend(lang_lines)
+    block.extend(lang_lines or ['   (no language data)'])
     block.append('```')
     block.append('')
 
     if recent:
-        block.append('**🛠️ Currently Building** <sub>5 most recent pushes, private included</sub>')
+        block.append(f'**🛠️ Currently Building** <sub>{building_sub}</sub>')
         block.append('')
         block.append('```text')
         block.append(recent)
         block.append('```')
         block.append('')
 
-    block.append(f'<sub>Last updated: {updated} · Generated from private + public repos.</sub>')
+    block.append(f'<sub>Last updated: {updated} · {source_note}</sub>')
     return '\n'.join(block)
 
 
@@ -487,10 +708,13 @@ def update_readme(block):
 # ---------- main ----------
 
 def main():
+    resolve_auth()
+
     print('Fetching owned repos…')
     repos = fetch_owned_repos()
     non_fork = non_fork_count(repos)
-    print(f'  {len(repos)} total ({non_fork} non-fork)')
+    public_count = public_non_fork_count(repos)
+    print(f'  {len(repos)} visible ({non_fork} non-fork, {public_count} public non-fork)')
 
     print('Fetching per-repo language proportions…')
     langs = fetch_language_proportions(repos)
@@ -514,7 +738,7 @@ def main():
     recent = fetch_recent_repos(limit=5, exclude_name_with_owner=profile_repo)
     print(f'  {len(recent)} recent repos (excluding {profile_repo})')
 
-    block = render_block(stats, langs, stars, non_fork, recent)
+    block = render_block(stats, langs, stars, public_count, recent)
     update_readme(block)
 
 

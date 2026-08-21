@@ -19,7 +19,7 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 
 ## GitHub Stats
 
-<sub>Generated daily by a GitHub Action. Includes private repositories via GraphQL `restrictedContributionsCount`; language breakdown is a per-repo proportional average so one vendored library can't skew the totals.</sub>
+<sub>Generated daily by a GitHub Action. Contribution totals include private activity via GraphQL `restrictedContributionsCount` (when shown on the profile). Language breakdown is a per-repo proportional average so one vendored library can't skew the totals. A valid <code>ACCESS_TOKEN</code> secret adds private repo names to languages and Currently Building.</sub>
 
 <!-- GH_STATS:START -->
 
@@ -29,59 +29,60 @@ I'm a **creative technologist** who lives at the intersection of iOS development
    ⭐ Total Stars Earned    5
    👥 Followers             5
    🧭 Following             4
-   📁 Public Repos (owned)  79
-   🎂 GitHub Age            Jun 2018 (7 yrs, 11 mo)
+   📁 Public Repos (owned)  25
+   🎂 GitHub Age            Jun 2018 (8 yrs, 2 mo)
 ```
 
 **📊 Contributions** <sub>(all-time, includes private repos)</sub>
 
 ```text
-   🔥 Total Commits         1,184
+   🔥 Total Commits         2,311
    🔀 Total PRs             0
    ✅ Total PR Reviews      0
    💬 Total Issues          10
-   📦 Repos Contributed To  29
+   📦 Repos Contributed To  15
 ```
 
 **📈 Activity (2026)**
 
 ```text
-   📈 Total Contributions   526
-   🗓️  Active Days          52 / 143
-   🔥 Current Streak        48 days
-   ⚡ Longest Streak        48 days
+   📈 Total Contributions   1,599
+   🗓️  Active Days          142 / 233
+   🔥 Current Streak        138 days
+   ⚡ Longest Streak        138 days
 ```
 
-**💻 Most Used Languages** <sub>per-repo average across all non-fork repos</sub>
+**💻 Most Used Languages** <sub>per-repo average across public non-fork repos</sub>
 
 ```text
-   Swift       34.40 %  ████████▒░░░░░░░░░░░░░░░░
-   TypeScript  32.49 %  ████████░░░░░░░░░░░░░░░░░
-   HTML         5.78 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
-   JavaScript   5.47 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
-   CSS          3.74 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
-   PHP          3.22 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
-   Python       3.05 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
-   C            1.92 %  ▒░░░░░░░░░░░░░░░░░░░░░░░░
-   Other        9.92 %  ██▒░░░░░░░░░░░░░░░░░░░░░░
+   HTML        16.51 %  ████░░░░░░░░░░░░░░░░░░░░░
+   JavaScript  14.72 %  ███▓░░░░░░░░░░░░░░░░░░░░░
+   TypeScript  13.96 %  ███▒░░░░░░░░░░░░░░░░░░░░░
+   Python      11.11 %  ██▓░░░░░░░░░░░░░░░░░░░░░░
+   CSS          8.41 %  ██░░░░░░░░░░░░░░░░░░░░░░░
+   C++          6.80 %  █▓░░░░░░░░░░░░░░░░░░░░░░░
+   Shell        5.56 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
+   Java         5.56 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
+   Other       17.36 %  ████▒░░░░░░░░░░░░░░░░░░░░
 ```
 
-**🛠️ Currently Building** <sub>5 most recent pushes, private included</sub>
+**🛠️ Currently Building** <sub>5 most recent public pushes</sub>
 
 ```text
-   █  botanicbase-n8n-backup      —            · 2h ago  🔒 private
-         └ n8n workflow backups for BotanicBase automations — exported workflow and back…
-   ▓  YodeckSlides                Swift        · 1d ago  🔒 private
-   ▓  SlideshowGenerator          Swift        · 1d ago  🔒 private
-   ▓  dv-global-highlights-reel   TypeScript   · 3d ago  🔒 private
-         └ DoubleVerify global all-hands highlights reel and slideshow studio
-   ▒  melodyshare-website         TypeScript   · 1w ago  🔒 private
-         └ MelodyShare website
+   █  cloudkit-sign          TypeScript   · 16m ago
+         └ Minimal, well-typed CloudKit server-to-server request signing for Node.js.
+   ░  openclaw-path-alerts   JavaScript   · 2mo ago
+         └ Real-time NJ PATH train alerts, service status, and arrival times for OpenCla…
+   ░  route-map-cli          TypeScript   · 3mo ago
+         └ Map application routes from common JavaScript and TypeScript web projects.
+   ░  poke-ebay-web-admin    TypeScript   · 3mo ago
+   ░  sample                 —            · 2y ago 
+         └ Sample/test repository
 
       █  last 24h     ▓  this week     ▒  this month     ░  older
 ```
 
-<sub>Last updated: May 23, 2026 · 06:49 UTC · Generated from private + public repos.</sub>
+<sub>Last updated: Aug 21, 2026 · 14:31 UTC · Generated via GITHUB_TOKEN (public repos + profile contribution graph). Refresh ACCESS_TOKEN to include private repo names/languages.</sub>
 
 <!-- GH_STATS:END -->
 
