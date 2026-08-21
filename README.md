@@ -19,7 +19,7 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 
 ## GitHub Stats
 
-<sub>Generated daily by a GitHub Action. Contribution totals include private activity via GraphQL `restrictedContributionsCount` (when shown on the profile). Language breakdown is a per-repo proportional average so one vendored library can't skew the totals. A valid <code>ACCESS_TOKEN</code> secret adds private repo names to languages and Currently Building.</sub>
+<sub>Generated daily by a GitHub Action. Includes private repositories via GraphQL `restrictedContributionsCount`; language breakdown is a per-repo proportional average so one vendored library can't skew the totals.</sub>
 
 <!-- GH_STATS:START -->
 
@@ -36,8 +36,8 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **📊 Contributions** <sub>(all-time, includes private repos)</sub>
 
 ```text
-   🔥 Total Commits         2,311
-   🔀 Total PRs             0
+   🔥 Total Commits         2,312
+   🔀 Total PRs             1
    ✅ Total PR Reviews      0
    💬 Total Issues          10
    📦 Repos Contributed To  15
@@ -46,7 +46,7 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **📈 Activity (2026)**
 
 ```text
-   📈 Total Contributions   1,599
+   📈 Total Contributions   1,601
    🗓️  Active Days          142 / 233
    🔥 Current Streak        138 days
    ⚡ Longest Streak        138 days
@@ -69,7 +69,7 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **🛠️ Currently Building** <sub>5 most recent public pushes</sub>
 
 ```text
-   █  cloudkit-sign          TypeScript   · 16m ago
+   █  cloudkit-sign          TypeScript   · 19m ago
          └ Minimal, well-typed CloudKit server-to-server request signing for Node.js.
    ░  openclaw-path-alerts   JavaScript   · 2mo ago
          └ Real-time NJ PATH train alerts, service status, and arrival times for OpenCla…
@@ -82,7 +82,7 @@ I'm a **creative technologist** who lives at the intersection of iOS development
       █  last 24h     ▓  this week     ▒  this month     ░  older
 ```
 
-<sub>Last updated: Aug 21, 2026 · 14:31 UTC · Generated via GITHUB_TOKEN (public repos + profile contribution graph). Refresh ACCESS_TOKEN to include private repo names/languages.</sub>
+<sub>Last updated: Aug 21, 2026 · 14:34 UTC</sub>
 
 <!-- GH_STATS:END -->
 

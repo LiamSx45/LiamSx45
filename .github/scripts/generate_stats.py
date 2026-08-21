@@ -639,14 +639,9 @@ def render_block(stats, langs, stars, public_repo_count, recent_repos):
     # --- Assemble the block ---
     updated = now.strftime('%b %d, %Y · %H:%M UTC')
     if AUTH_MODE == 'private':
-        source_note = 'Generated from private + public repos.'
         lang_sub = 'per-repo average across all non-fork repos'
         building_sub = '5 most recent pushes, private included'
     else:
-        source_note = (
-            'Generated via GITHUB_TOKEN (public repos + profile contribution graph). '
-            'Refresh ACCESS_TOKEN to include private repo names/languages.'
-        )
         lang_sub = 'per-repo average across public non-fork repos'
         building_sub = '5 most recent public pushes'
 
@@ -675,7 +670,7 @@ def render_block(stats, langs, stars, public_repo_count, recent_repos):
         block.append('```')
         block.append('')
 
-    block.append(f'<sub>Last updated: {updated} · {source_note}</sub>')
+    block.append(f'<sub>Last updated: {updated}</sub>')
     return '\n'.join(block)
 
 
