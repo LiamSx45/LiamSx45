@@ -36,53 +36,52 @@ I'm a **creative technologist** who lives at the intersection of iOS development
 **📊 Contributions** <sub>(all-time, includes private repos)</sub>
 
 ```text
-   🔥 Total Commits         2,312
-   🔀 Total PRs             1
+   🔥 Total Commits         2,301
+   🔀 Total PRs             10
    ✅ Total PR Reviews      0
    💬 Total Issues          10
-   📦 Repos Contributed To  15
+   📦 Repos Contributed To  43
 ```
 
 **📈 Activity (2026)**
 
 ```text
-   📈 Total Contributions   1,601
-   🗓️  Active Days          142 / 233
-   🔥 Current Streak        138 days
-   ⚡ Longest Streak        138 days
+   📈 Total Contributions   1,669
+   🗓️  Active Days          146 / 237
+   🔥 Current Streak        142 days
+   ⚡ Longest Streak        142 days
 ```
 
-**💻 Most Used Languages** <sub>per-repo average across public non-fork repos</sub>
+**💻 Most Used Languages** <sub>per-repo average across all non-fork repos</sub>
 
 ```text
-   HTML        16.51 %  ████░░░░░░░░░░░░░░░░░░░░░
-   JavaScript  14.72 %  ███▓░░░░░░░░░░░░░░░░░░░░░
-   TypeScript  13.96 %  ███▒░░░░░░░░░░░░░░░░░░░░░
-   Python      11.11 %  ██▓░░░░░░░░░░░░░░░░░░░░░░
-   CSS          8.41 %  ██░░░░░░░░░░░░░░░░░░░░░░░
-   C++          6.80 %  █▓░░░░░░░░░░░░░░░░░░░░░░░
-   Shell        5.56 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
-   Java         5.56 %  █▒░░░░░░░░░░░░░░░░░░░░░░░
-   Other       17.36 %  ████▒░░░░░░░░░░░░░░░░░░░░
+   TypeScript  39.54 %  █████████▓░░░░░░░░░░░░░░░
+   Swift       29.39 %  ███████▒░░░░░░░░░░░░░░░░░
+   JavaScript   6.81 %  █▓░░░░░░░░░░░░░░░░░░░░░░░
+   HTML         5.00 %  █░░░░░░░░░░░░░░░░░░░░░░░░
+   CSS          3.77 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
+   PHP          2.64 %  ▓░░░░░░░░░░░░░░░░░░░░░░░░
+   Python       2.49 %  ▒░░░░░░░░░░░░░░░░░░░░░░░░
+   C            1.57 %  ▒░░░░░░░░░░░░░░░░░░░░░░░░
+   Other        8.78 %  ██░░░░░░░░░░░░░░░░░░░░░░░
 ```
 
-**🛠️ Currently Building** <sub>5 most recent public pushes</sub>
+**🛠️ Currently Building** <sub>5 most recent pushes, private included</sub>
 
 ```text
-   █  cloudkit-sign          TypeScript   · 19m ago
+   █  fold                     TypeScript   · 2m ago  🔒 private
+   █  botanicbase-n8n-backup   —            · 2h ago  🔒 private
+         └ n8n workflow backups for BotanicBase automations — exported workflow and back…
+   ▓  slepton-web              TypeScript   · 4d ago  🔒 private
+   ▓  cloudkit-sign            TypeScript   · 4d ago
          └ Minimal, well-typed CloudKit server-to-server request signing for Node.js.
-   ░  openclaw-path-alerts   JavaScript   · 2mo ago
-         └ Real-time NJ PATH train alerts, service status, and arrival times for OpenCla…
-   ░  route-map-cli          TypeScript   · 3mo ago
-         └ Map application routes from common JavaScript and TypeScript web projects.
-   ░  poke-ebay-web-admin    TypeScript   · 3mo ago
-   ░  sample                 —            · 2y ago 
-         └ Sample/test repository
+   ▓  melodyshare-website      TypeScript   · 4d ago  🔒 private
+         └ MelodyShare website
 
       █  last 24h     ▓  this week     ▒  this month     ░  older
 ```
 
-<sub>Last updated: Aug 21, 2026 · 14:34 UTC</sub>
+<sub>Last updated: Aug 25, 2026 · 18:51 UTC</sub>
 
 <!-- GH_STATS:END -->
 
